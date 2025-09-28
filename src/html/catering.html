@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {{> partials/head title="Nirmals Restaurant"}}
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bigpicture/dist/bigpicture.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+  <style>
+    .bg-light {
+      background-color: #f8f9fa;
+    }
+
+    .container.d-flex {
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .bg-holder {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  {{> partials/navbar variant="dark" toggle="true" page="catering.html"}}
+
+  <!-- HEADER -->
+  <header data-jarallax data-speed="1"
+    style="background-image: url(assets/img/15.jpg); background-size: cover; background-position: center 6%; background-repeat: no-repeat;">
+    <div class="pt-10 pb-5 pt-md-15 pb-md-13 bg-black bg-opacity-50">
+      <div class="container position-relative">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-5 mb-lg-0 pe-md-5">
+            <h1 class="fw-normal mb-4 text-white">
+              For all your
+              <span class="display-6"> <span class="text-primary">CATERING</span> needs and events</span>
+            </h1>
+            <p class="mb-0 text-white">Make your events a grand success</p>
+            <div class="d-flex flex-wrap gap-3 mt-3 mt-lg-4">
+              <a href="#catering" class="btn btn-outline-primary text-white text-primary-hover">INQUIRY NOW <i
+                  class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Title Info -->
+  <section class="py-5 py-md-9">
+    <div class="container-fluid" style="width: 80%;">
+      <div class="row justify-content-center mb-2">
+        <div class="col-12 col-md-8 col-lg-6 text-center">
+          <h2 class="mb-3 display-6 text-primary">Tasty Food for all kinds of events</h2>
+          <p class="mb-2">From the first bite to the last toast, our mission is to make your event as unforgettable as
+            the flavors we bring to the table.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Icons -->
+  <div class="social-icons-sticky-bottom">
+    <a href="tel:+12066839701" aria-label="Call"><i class="fas fa-phone"></i></a>
+    <a href="https://x.com/NirmalsSeattle" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+    <a href="https://www.facebook.com/nirmalseattle" target="_blank" aria-label="Facebook"><i
+        class="fab fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com/nirmalsseattle/" target="_blank" aria-label="Instagram"><i
+        class="fab fa-instagram"></i></a>
+    <a href="https://www.google.com/maps?q=106+Occidental+Ave+S,+Seattle,+WA+98104" target="_blank"
+      aria-label="Location"><i class="fas fa-map-marker-alt"></i></a>
+  </div>
+
+<!-- Gallery Cards -->
+<section class="pb-5 mb-sm-2 mb-md-3 mb-lg-4 mb-xl-5 container">
+  <div class="row g-4 mb-xxl-3 align-items-stretch">
+    <!-- Left column (2 stacked images) -->
+    <div class="col-sm-5 d-flex flex-column gap-4">
+      <div class="position-relative bg-body-tertiary rounded-5 overflow-hidden">
+        <img src="assets/img/cat2.JPG" class="img-fluid rounded-5 w-100" alt="Image">
+      </div>
+      <div class="flex-grow-1 d-flex">
+        <img src="assets/img/cat4.jpg" class="img-fluid rounded-5 w-100 h-100 object-fit-cover" alt="Image">
+      </div>
+    </div>
+
+    <!-- Right column (2 stacked images) -->
+    <div class="col-sm-7 d-flex flex-column gap-4">
+      <div>
+        <img src="assets/img/cat6.jpg" class="img-fluid rounded-5 w-100" alt="Image">
+      </div>
+      <div class="flex-grow-1 d-flex">
+        <img src="assets/img/cat1.JPG" class="img-fluid rounded-5 w-100 h-100 object-fit-cover" alt="Image">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- Services -->
+  <section class="container mb-7">
+    <div class="row row-cols-2 row-cols-md-4 g-10">
+      <div class="col">
+        <div class="d-flex flex-column flex-xxl-row align-items-center">
+          <div class="d-flex text-dark-emphasis bg-body-tertiary rounded-circle p-4 mb-3 mb-xxl-0">
+            <i class="ci-delivery fs-4 m-xxl-1 icon-container">
+              <img src="assets/favicon/menu.png" alt="Logo" class="icon-image">
+            </i>
+          </div>
+          <div class="text-center ps-xxl-3">
+            <h5 class="mb-1"><strong>Customizable Menu</strong></h5>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="d-flex flex-column flex-xxl-row align-items-center gap-3">
+          <div class="d-flex text-dark-emphasis bg-body-tertiary rounded-circle p-4 mb-3 mb-xxl-0">
+            <i class="ci-delivery fs-4 m-xxl-1 icon-container">
+              <img src="assets/favicon/gluton.png" alt="Logo" class="icon-image">
+            </i>
+          </div>
+          <div class="text-center">
+            <h5 class="mb-1 text-nowrap" style="white-space: nowrap;"><strong>Vegan & Gluten</strong></h5>
+            <p class="mb-0">free options</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="d-flex flex-column flex-xxl-row align-items-center gap-3">
+          <div class="d-flex text-dark-emphasis bg-body-tertiary rounded-circle p-4 mb-3 mb-xxl-0">
+            <i class="ci-delivery fs-4 m-xxl-1 icon-container">
+              <img src="assets/favicon/delivery.png" style="height: 115%; width: 110%;" alt="Logo" class="icon-image">
+            </i>
+          </div>
+          <div class="text-center">
+            <h5 class="mb-1 text-nowrap" style="white-space: nowrap;"><strong>Delivery</strong></h5>
+            <p class="mb-0" style="white-space: nowrap;">to your Door step</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="d-flex flex-column flex-xxl-row align-items-center gap-3">
+          <div class="d-flex text-dark-emphasis bg-body-tertiary rounded-circle p-4 mb-3 mb-xxl-0">
+            <i class="ci-delivery fs-4 m-xxl-1 icon-container">
+              <img src="assets/favicon/event.png" style="height: 120%; width: 120%;" alt="Logo" class="icon-image">
+            </i>
+          </div>
+          <div class="text-center">
+            <h5 class="mb-1 text-nowrap" style="white-space: nowrap;"><strong>Fully resourced</strong></h5>
+            <p class="mb-0">event coordinators and support staff</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Catering Reservation -->
+  <!-- Catering Reservation -->
+<section class="pt-7 pt-md-5" id="catering">
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8 col-lg-6 text-center">
+        <!-- Heading -->
+        <h2 class="mb-5">CATERING INQUIRY</h2>
+      </div>
+    </div>
+
+    <div class="row justify-content-lg-center">
+      <div class="col-lg-8">
+        <!-- Single Valid Form -->
+        <form method="POST" action="/api/catering" id="cateringForm">
+          <div class="row gx-3">
+            <div class="col-md-6">
+              <input type="hidden" name="contact_number" />
+
+              <!-- Full name -->
+              <div class="mb-3">
+                <label class="visually-hidden" for="user_name">Full name</label>
+                <input class="form-control" id="user_name" name="user_name" type="text" placeholder="Full name" required />
+              </div>
+
+              <!-- Phone number -->
+              <div class="mb-3">
+                <label class="visually-hidden" for="user_phone">Phone number</label>
+                <input class="form-control" id="user_phone" name="user_phone" type="tel" placeholder="Phone number" required />
+              </div>
+
+              <!-- Email address -->
+              <div class="mb-3">
+                <label class="visually-hidden" for="user_email">Email address</label>
+                <input class="form-control" id="user_email" name="user_email" type="email" placeholder="Email address" required />
+              </div>
+
+              <!-- Address -->
+              <div class="mb-3">
+                <label class="visually-hidden" for="address">Address</label>
+                <input class="form-control" id="address" name="address" type="text" placeholder="Address" required />
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <!-- Guests -->
+              <div class="mb-3">
+                <label class="visually-hidden" for="num_guests">Guests</label>
+                <select class="form-select" id="num_guests" name="guests" required>
+                  <option value="6">6 persons</option>
+                  <option value="7" selected>7 persons</option>
+                  <option value="8">8 persons</option>
+                  <option value="9">9 persons</option>
+                  <option value="10">10 persons</option>
+                  <option value="11">11 persons</option>
+                  <option value="12">12 persons</option>
+                  <option value="13">13 persons</option>
+                  <option value="14">14 persons</option>
+                  <option value="15">15 persons</option>
+                  <option value="16">16 persons</option>
+                  <option value="17">17 persons</option>
+                  <option value="18">18 persons</option>
+                  <option value="19">19 persons</option>
+                  <option value="20">20 persons</option>
+                </select>
+              </div>
+
+              <!-- Date -->
+              <div class="mb-3">
+                <label class="visually-hidden" for="date">Date</label>
+                <input class="form-control" id="date" name="date" type="date" value="2024-12-30" required />
+              </div>
+
+              <!-- Time -->
+              <div class="mb-3">
+                <label class="visually-hidden" for="time">Time</label>
+                <input class="form-control" id="time" name="time" type="time" value="18:00" required />
+              </div>
+
+              <!-- Budget -->
+              <div class="mb-3">
+                <label class="visually-hidden" for="budget">Budget</label>
+                <input class="form-control" id="budget" name="budget" type="number" placeholder="Budget Per Person Ex: 30$/person" required />
+              </div>
+            </div>
+
+            <!-- Description -->
+            <h5>Description</h5>
+            <div class="mb-3">
+              <label class="visually-hidden" for="description">Description</label>
+              <textarea class="form-control" id="description" name="description" rows="9" placeholder="Description" required></textarea>
+            </div>
+
+            <!-- Occasion -->
+            <h4>Occasion</h4>
+            <div class="mb-3">
+              <label class="visually-hidden" for="occasion">Occasion</label>
+              <select class="form-select" id="occasion" name="occasion" required>
+                <option value="Anniversary" selected>Anniversary</option>
+                <option value="Baby Shower">Baby Shower</option>
+                <option value="Bachelor Party">Bachelor Party</option>
+                <option value="Bachelorette Party">Bachelorette Party</option>
+                <option value="Bar Mitzvah">Bar Mitzvah</option>
+                <option value="Birthday">Birthday</option>
+                <option value="Bridal Shower">Bridal Shower</option>
+                <option value="Business/Office/Corporate Functions">Business/Office/Corporate Functions</option>
+                <option value="Family Reunion">Family Reunion</option>
+                <option value="Graduation">Graduation</option>
+                <option value="Holiday Party">Holiday Party</option>
+                <option value="Rehearsal Dinner">Rehearsal Dinner</option>
+                <option value="Repast/Memorial Service Reception">Repast/Memorial Service Reception</option>
+                <option value="Retirement">Retirement</option>
+                <option value="Wedding">Wedding</option>
+                <option value="Others">Others</option>
+              </select>
+            </div>
+
+            <!-- Catering Services -->
+            <div class="mb-3">
+              <h4>Type Of Catering Service</h4>
+              <div class="list-group">
+                <label class="list-group-item d-flex gap-2">
+                  <input class="form-check-input flex-shrink-0" type="radio" name="catering_type" value="Pick-Up" checked>
+                  <span>
+                    Pick-Up
+                    <small class="d-block text-body-secondary">You will pick up your order from the Restaurant</small>
+                  </span>
+                </label>
+                <label class="list-group-item d-flex gap-2">
+                  <input class="form-check-input flex-shrink-0" type="radio" name="catering_type" value="Delivery">
+                  <span>
+                    Delivery
+                    <small class="d-block text-body-secondary">We will deliver to the event location</small>
+                  </span>
+                </label>
+                <label class="list-group-item d-flex gap-2">
+                  <input class="form-check-input flex-shrink-0" type="radio" name="catering_type" value="Fully Staffed">
+                  <span>
+                    Fully Staffed
+                    <small class="d-block text-body-secondary">Complete team to handle food, service, and event logistics</small>
+                  </span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="mb-3 text-center">
+              <button class="btn btn-outline-primary" type="submit">Send Inquiry</button>
+            </div>
+
+          </div>
+        </form>
+      </div>
+    </div>
+</section>
+
+  <!-- Phone Section -->
+  <section class="py-7 py-md-9">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <div class="block-decoration block-decoration-1 py-3">
+            <p class="mb-2 text-xs text-center">or call us:</p>
+            <a class="display-6 font-serif text-decoration-none text-body-emphasis" href="tel:+19876543210">+1
+              206-683-9701</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map -->
+  <section class="bg-light" data-map='{"center": [47.601568445924066, -122.33267251559042], "zoom": 12}'
+    style="height: 30rem"></section>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <!-- Book A Table button -->
+  <a href="reservation.html" class="btn text-white text-dark-hover" id="book-table-btn" style="display: none;">
+    Book A Table
+  </a>
+
+ <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const bookTableBtn = document.getElementById("book-table-btn");
+  const cateringBtn = document.getElementById("catering-btn");
+  const cateringSection = document.getElementById("catering"); // targeting the section by ID
+
+  window.addEventListener("scroll", () => {
+    const scrollY = window.scrollY;
+
+    if (cateringSection && cateringBtn) {
+      const rect = cateringSection.getBoundingClientRect();
+
+      // If the catering section is visible on screen
+      if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+        bookTableBtn.style.display = "none"; // hide Book A Table
+        cateringBtn.style.display = "block"; // show Catering button
+      } else {
+        cateringBtn.style.display = "none";
+
+        // Show Book A Table button if scrolled down beyond 200px
+        bookTableBtn.style.display = scrollY > 200 ? "block" : "none";
+      }
+    } else {
+      // Fallback if catering elements missing
+      bookTableBtn.style.display = scrollY > 200 ? "block" : "none";
+    }
+  });
+});
+</script>
+
+
+  <!-- FOOTER -->
+  {{> partials/footer}}
+  {{> partials/toast}}
+  {{> partials/scripts}}
+</body>
+
+</html>

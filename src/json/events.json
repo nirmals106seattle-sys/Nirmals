@@ -1,0 +1,17 @@
+{
+  "preheading": "Events",
+  "heading": "Stay Tuned for our Upcoming Events",
+  "subheading": "Join us for an exclusive evening filled with fine dining, live music, and unforgettable experiences.",
+  "image": "assets/img/coming_soon.png",
+  "rsvp": {
+    "text": "RSVP",
+    "link": ""
+  },
+  "onlineOrdering": {
+    "title": "New Fest Coming soon ",
+    "paragraphs": [
+      "Get ready to celebrate flavor like never before! Our upcoming Fest is bringing you exciting new dishes, special offers, and a delightful dining experience.",
+      "From quick bites to indulgent feasts, ordering your favorites will be easier than ever—just browse the menu, place your order in a few clicks, and enjoy the celebration from the comfort of your home. A festival of taste is on its way—stay tuned!"
+    ]
+  }
+}

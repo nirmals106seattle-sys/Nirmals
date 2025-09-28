@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{> partials/head title="Nirmals Restaurant"}}
+    <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bigpicture/dist/bigpicture.min.js"></script>
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    {{> partials/navbar variant="dark" toggle="true" page="menu.html"}}
+
+    <!-- HEADER -->
+    <header data-jarallax data-speed="1" style="background-image: url(assets/img/menu1.png)">
+        <div class="pt-3 pb-4 pt-md-3 pb-md-10 bg-black bg-opacity-50">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="text-center" style="padding-top: 15%;">
+                        <h1 class="display-6 fw-bold text-white">Menu</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Book A Table button -->
+    <a href="https://www.yelp.com/reservations/nirmals-seattle" target="_blank" class="btn text-white text-dark-hover" id="book-table-btn">
+        Book A Table
+    </a>
+
+    <!-- Sticky social icons -->
+    <div class="social-icons-sticky-bottom">
+        <a href="tel:+12066839701" aria-label="Call"><i class="fas fa-phone"></i></a>
+        <a href="https://x.com/NirmalsSeattle" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.facebook.com/nirmalseattle" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/nirmalsseattle/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.google.com/maps?q=106+Occidental+Ave+S,+Seattle,+WA+98104" target="_blank" aria-label="Location"><i class="fas fa-map-marker-alt"></i></a>
+    </div>
+<section class="border-bottom menu-color">
+  <div class="container-fluid py-3">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8 col-lg-6 text-center">
+        <h1 class="mb-2">Cuisine</h1>
+      </div>
+    </div>
+
+    <!-- Main Tabs -->
+    <div class="row">
+      <div class="col">
+        <div class="nav justify-content-center mb-6" id="menuTabs">
+          <a class="nav-link active" data-bs-toggle="tab" href="#lunch">Lunch</a>
+          <a class="nav-link" data-bs-toggle="tab" href="#dinner">Dinner</a>
+          <a class="nav-link" data-bs-toggle="tab" href="#jain">Jain Specials</a>
+          <a class="nav-link" data-bs-toggle="tab" href="#dessert">Dessert</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container py-5">
+    <div class="tab-content" id="menuContent">
+      <!-- Lunch Menu -->
+      <div class="tab-pane fade show active" id="lunch">
+        <h3 class="text-center">Lunch Menu</h3>
+
+        <div class="row mb-4">
+          <div class="col">
+            <div class="nav justify-content-center">
+              <a class="nav-link subtext" data-menu-subtab="L-appetizerSection" href="#">Appetizers</a>
+              <a class="nav-link subtext" data-menu-subtab="L-MumbaiSection" href="#">Mumbai Street Food</a>
+              <a class="nav-link subtext" data-menu-subtab="thaliSection" href="#">Thali</a>
+              <a class="nav-link subtext" data-menu-subtab="L-breadSection" href="#">Bread, Dosa & Rice</a>
+            </div>
+          </div>
+        </div>
+
+        <div id="L-appetizerSection" data-menu-section="lunch.appetizers" data-type="list" class="mb-5"><div class="items"></div></div>
+        <div id="L-MumbaiSection" data-menu-section="lunch.mumbai" data-type="list" class="mb-5"><div class="items"></div></div>
+        <div id="thaliSection" data-menu-section="lunch.thali" data-type="list" class="mb-5"><div class="items"></div></div>
+        <div id="L-breadSection" data-menu-section="lunch.bread" data-type="grid" class="mb-5"><div class="row grid"></div></div>
+      </div>
+
+
+
+                <!-- Dinner Menu -->
+                <div class="tab-pane fade" id="dinner" role="tabpanel">
+                    <h3 class="text-center">Dinner Menu</h3>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <div class="nav justify-content-center" role="tablist">
+                                <a class="nav-link subtext" data-menu-subtab="D-appetizerSection" href="#">Appetizers</a>
+                                <a class="nav-link subtext" data-menu-subtab="D-vegSection" href="#">Vegetable Entrees</a>
+                                <a class="nav-link subtext" data-menu-subtab="D-nonvegSection" href="#">Non-Veg Entrees</a>
+                                <a class="nav-link subtext" data-menu-subtab="D-breadSection" href="#">Bread, Dosa & Rice</a>
+                                <a class="nav-link subtext" data-menu-subtab="D-biryani" href="#">Biryani</a>
+                                <a class="nav-link subtext" data-menu-subtab="D-MumbaiSection" href="#">Mumbai Street Food</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="D-appetizerSection" data-menu-section="dinner.appetizers" data-type="grid" class="mb-5"><div class="row grid"></div></div>
+                    <div id="D-vegSection" data-menu-section="dinner.veg" data-type="grid" class="mb-5"><div class="row grid"></div></div>
+                    <div id="D-nonvegSection" data-menu-section="dinner.nonveg" data-type="grid" class="mb-5"><div class="row grid"></div></div>
+                    <div id="D-breadSection" data-menu-section="dinner.bread" data-type="grid" class="mb-5"><div class="row grid"></div></div>
+                    <div id="D-biryani" data-menu-section="dinner.biryani" data-type="list" class="mb-5"><div class="items"></div></div>
+                    <div id="D-MumbaiSection" data-menu-section="dinner.mumbai" data-type="list" class="mb-5"><div class="items"></div></div>
+                </div>
+
+                <!-- Jain Menu -->
+                <div class="tab-pane fade" id="jain" role="tabpanel">
+                    <h3 class="text-center">Jain Specials</h3>
+                    <div id="jainSection" data-menu-section="jain" data-type="jain" class="items"></div>
+                </div>
+
+                <!-- Dessert Menu -->
+                <div class="tab-pane fade" id="dessert" role="tabpanel">
+                    <h3 class="text-center mb-4">Desserts</h3>
+                    <div id="dessertSection" data-menu-section="dessert" data-type="grid" class="row"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features / Must Try -->
+    <section class="py-7 py-md-9 overflow-hidden">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8 col-lg-6 text-center">
+                    <h2 class="mb-2">Must <em>Try</em> (populars)</h2>
+                    <p class="mb-6">Taste the Essence of Our Chef’s Inspiration.</p>
+                </div>
+            </div>
+            <div class="row" data-menu-section="popular" data-type="popular"></div>
+        </div>
+    </section>
+
+    <!-- Reservation -->
+    <section class="py-7 py-md-9" style="background-color: #344E41;" id="reservation">
+        <div class="container text-center">
+            <h2 class="mb-6" style="color: orange;">MAKE ONLINE RESERVATION</h2>
+            <a href="https://www.yelp.com/reservations/nirmals-seattle" target="_blank" class="btn btn-outline-primary text-white">Reserve a table</a>
+            <p class="mb-2 text-xs mt-3" style="color: white;">or call us:</p>
+            <a href="tel:+12066839701" style="color: white;" class="display-6 font-serif text-decoration-none">+1 (206) 683-9701</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    {{> partials/footer}}
+
+    <!-- Toast & Scripts -->
+    {{> partials/toast}}
+    {{> partials/scripts}}
+
+    <!-- Menu JS + Smooth scrolling + Tab highlight -->
+    <script src="assets/js/menu.js"></script>
+</body>
+</html>

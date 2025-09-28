@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{> partials/head title="Nirmals Restaurant"}}
+
+    <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bigpicture/dist/bigpicture.min.js"></script>
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    {{> partials/navbar variant="dark" toggle="true" page="drink.html"}}
+
+    <!-- HEADER -->
+    <header data-jarallax data-speed=".8"
+        style="background-image: url(assets/img/bar.jpg); background-size: cover; background-position: center 6%; background-repeat: no-repeat;">
+        <div class="pt-10 pb-5 pt-md-15 pb-md-13 bg-black bg-opacity-50">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-5 col-lg-6 text-center">
+                        <!-- Heading -->
+                        <h1 class="display-6 fw-bold text-primary"> BAR </h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Social Icons -->
+    <!-- Sticky social icons near right bottom -->
+    <div class="social-icons-sticky-bottom ">
+
+        <a href="tel:+12066839701" aria-label="Call">
+            <i class="fas fa-phone"></i></a>
+
+        <a href="https://x.com/NirmalsSeattle" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+
+        <a href="https://www.facebook.com/nirmalseattle" target="_blank" aria-label="Facebook"><i
+                class="fab fa-facebook-f"></i></a>
+
+        <a href="https://www.instagram.com/nirmalsseattle/" target="_blank" aria-label="Instagram"><i
+                class="fab fa-instagram"></i></a>
+
+        <a href="https://www.google.com/maps?q=106+Occidental+Ave+S,+Seattle,+WA+98104" target="_blank"
+            aria-label="Location"><i class="fas fa-map-marker-alt"></i></a>
+
+
+
+    </div>
+
+    <!-- MENU -->
+    <section class="border-bottom menu-color">
+
+
+        <div class="container-fluid" style="background-color: #344E41; padding-top: 1%; padding-bottom: 1%;">
+
+            <!-- Browse by Categories-->
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8 col-lg-6 text-center">
+                    <!-- Heading -->
+                    <h2 class="mb-2 " style="color: azure; padding-top: 5%;">Thirst Quencher Guide</h2>
+
+                    <!-- Subheading -->
+                    <p class="mb-6">
+
+                    </p>
+                </div>
+            </div>
+            <!-- End Browse Categories-->
+
+            <!-- Menu List Nav-Bar -->
+            <div class="row">
+                <div class="col">
+                    <!-- Navigation -->
+                    <div class="nav justify-content-center mb-6" id="menuTabs" role="tablist">
+                        <a class="nav-link scroll-up-btn menu-text-size subline active" id="wineTab"
+                            data-bs-toggle="tab" href="#wine" role="tab" aria-controls="wine"
+                            aria-selected="true">Wine</a>
+                        <a class="nav-link scroll-up-btn menu-text-size subline" id="cocktailsTab" data-bs-toggle="tab"
+                            href="#cocktails" role="tab" aria-controls="cocktails">Cocktails</a>
+                        <a class="nav-link scroll-up-btn menu-text-size subline" id="spiritsTab" data-bs-toggle="tab"
+                            href="#spirits" role="tab" aria-controls="spirits">Spirits</a>
+                        <a class="nav-link scroll-up-btn menu-text-size subline" id="beerTab" data-bs-toggle="tab"
+                            href="#beer" role="tab" aria-controls="beer">Beers & Other Drinks</a>
+                        <a class="nav-link scroll-up-btn menu-text-size subline" id="beveragesTab" data-bs-toggle="tab"
+                            href="#beverages" role="tab" aria-controls="beverages">Beverages</a>
+                    </div>
+                </div>
+            </div>
+            <!-- End Menu List Nav-bar -->
+        </div>
+
+
+        <div class="container py-7">
+            <!-- Menu Container -->
+            <div class="row">
+                <!-- Start menu class -->
+                <div class="col-12">
+                    <!-- Tab Content -->
+                    <div class="tab-content" id="menuContent">
+
+                        <!-- Wine Tab Content -->
+                        <div class="tab-pane fade show active" id="wine" role="tabpanel" aria-labelledby="wineTab">
+                            <!-- Title -->
+                            <div class="justify-content-center">
+                                <h1 class="pb-2 text-center"> WINE </h1>
+                            </div>
+                            <!-- End Title -->
+
+                            <!-- Sub-tabs -->
+                            <div class="row mb-4">
+                                <div class="col">
+                                    <!-- Sub Tab List -->
+                                    <div class="nav justify-content-center" id="subMenuTabs" role="tablist">
+                                        <a class="nav-link submenu-text-size subtext" id="redwineTab"
+                                            href="#redwineSection">Red Wine</a>
+                                        <a class="nav-link submenu-text-size subtext" id="whitewineTab"
+                                            href="#whitewineSection">White wine</a>
+                                        <a class="nav-link submenu-text-size subtext" id="bubbleTab"
+                                            href="#bubbleSection">Bubbles</a>
+                                    </div>
+                                    <!-- End Sub Tab List-->
+                                </div>
+                            </div>
+                            <!-- End Sub tabs-->
+
+                            <!-- Red Wine Section -->
+                            <div class="row justify-content-center">
+                                <div id="redwineSection" class="col-12">
+                                    <div class="container px-1 py-5" id="hanging-icons">
+                                        <h2 class="pb-2 border-bottom">RED WINE </h2>
+                                        <div class="row g-6 py-6 row-cols-2 row-cols-lg-3">
+                                            <!-- List 1-->
+                                            <div class="col d-flex align-items-start">
+                                                <div>
+                                                    <h4 class="fs-2 text-body-emphasis">Cabernet</h4>
+                                                    <p class="text-body-emphasis">Zuccardi Q Cabernet 2016 AR</p>
+                                                    <P class="text-body-emphasis">Arbor Crest Cabernet 2014 WA</P>
+                                                    <p class="text-body-emphasis">Rollet Cabernet 2008 WA</p>
+                                                    <p class="text-body-emphasis">Joseph Phelps Cabernet 2012 CA</p>
+                                                    <h4>Cabernet Blends</h4>
+                                                    <p class="text-body-emphasis"> Spring Valley Frederick Cab Blend
+                                                        2013 (WA) </p>
+                                                    <p class="text-body-emphasis"> OS Cab / Merlot Blend 2006 (WA) </p>
+
+                                                </div>
+                                            </div>
+                                            <!-- End List -->
+
+                                            <!-- List 2 -->
+                                            <div class="col d-flex align-items-start">
+                                                <div>
+                                                    <h4 class="fs-2 text-body-emphasis">Malbec</h4>
+                                                    <p class="text-body-emphasis">Norton Malbec 2013 (AR)</p>
+                                                    <p class="text-body-emphasis">Clos d Argentine Malbec 2013 (AR)</p>
+                                                    <h4 class="fs-2 text-body-emphasis">Garnacha / Grenache</h4>
+                                                    <p class="text-body-emphasis">Tres Picos Garnacha 2012 (SP)</p>
+                                                    <h4 class="fs-2 text-body-emphasis">Mourvèdre</h4>
+                                                    <p class="text-body-emphasis">Juan Gil Mourvèdre 2014 (SP)</p>
+                                                </div>
+                                            </div>
+                                            <!-- End List -->
+
+                                            <!-- List 3 -->
+                                            <div class="col d-flex align-items-start">
+                                                <div>
+                                                    <h4 class="fs-2 text-body-emphasis">Pinot Noir</h4>
+                                                    <p class="text-body-emphasis">St. Vincent Pinot Noir 2013 (CA)</p>
+                                                    <p class="text-body-emphasis">Four Graces Pinot Noir 2014 (OR)</p>
+                                                    <p class="text-body-emphasis">Willa Kenzie Aliette Pinot Noir 2013
+                                                        (OR)</p>
+                                                    <p class="text-body-emphasis">Au Contraire Pinot Noir 2013 (CA)</p>
+                                                    <p class="text-body-emphasis">Seven Springs Pinot Noir 2013 (CA)</p>
+                                                    <p class="text-body-emphasis">Meomi Pinot Noir 2016 (CA)</p>
+
+                                                </div>
+                                            </div>
+                                            <!-- End List -->
+
+                                            <!-- List 4 -->
+                                            <div class="col d-flex align-items-start">
+                                                <div>
+                                                    <h4 class="fs-2 text-body-emphasis">Merlot</h4>
+                                                    <p class="text-body-emphasis">Canoe Ridge Merlot 2013 (WA)</p>
+                                                    <h4 class="fs-2 text-body-emphasis">Syrah</h4>
+                                                    <p class="text-body-emphasis">6th Sense Syrah 2015 (CA)</p>
+                                                    <p class="text-body-emphasis">K. Vintner Syrah 2013 (WA)</p>
+                                                    <p class="text-body-emphasis">Montes Alpha Syrah 2014 (CL)</p>
+                                                    <p class="text-body-emphasis">The Pundit Syrah 2015 (WA)</p>
+                                                    <p class="text-body-emphasis">Le Fervent Syrah 2014 (FR)</p>
+
+                                                </div>
+                                            </div>
+                                            <!-- End List -->
+
+                                            <!-- List 5 -->
+                                            <div class="col d-flex align-items-start">
+                                                <div>
+                                                    <h4 class="fs-2 text-body-emphasis">Chianti</h4>
+                                                    <p class="text-body-emphasis">Caffagio Chianti 2010 (IT)</p>
+                                                    <p class="text-body-emphasis">Monsanto Chianti 2013 (IT)</p>
+                                                    <h4 class="fs-2 text-body-emphasis">Zinfandel</h4>
+                                                    <p class="text-body-emphasis">3 Ball Zinfandel 2012 (CA)</p>
+                                                    <p class="text-body-emphasis">Seghesio Zinfandel 2014 (CA)</p>
+
+                                                </div>
+                                            </div>
+                                            <!-- End List -->
+
+                                            <!-- List 6 -->
+                                            <div class="col d-flex align-items-start">
+                                                <div>
+                                                    <h4 class="fs-2 text-body-emphasis">Other Red Blends</h4>
+                                                    <p class="text-body-emphasis">Sparkman Wilderness 2014 (WA)</p>
+                                                </div>
+                                            </div>
+                                            <!-- End List -->
+
+
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                            <!-- End Red Wine -->
+
+                            <!-- White Wine Section -->
+                            <div class="row justify-content-center">
+                                <div id="whitewineSection" class="col-12">
+                                    <div class="container px-1 py-5" id="hanging-icons">
+                                        <h2 class="pb-2 border-bottom">WHITE WINE </h2>
+                                        <div class="row g-6 py-6 row-cols-2 row-cols-lg-3">
+
+                                            <!-- List 1-->
+                                            <div class="col d-flex align-items-start">
+                                                <div>
+                                                    <h4 class="fs-2 text-body-emphasis">Chardonnay</h4>
+                                                    <p class="text-body-emphasis">Th. Henry Chardonnay 2014 (CA)</p>
+                                                    <P class="text-body-emphasis">Au Contraire Chardonnay 2013 (CA)</P>
+                                                    <p class="text-body-emphasis">Beringer Pvt Chardonnay 2013 (CA)</p>
+                                                    <p class="text-body-emphasis">Grayson Chardonnay 2016 (CA)</p>
+                                                    <p class="text-body-emphasis">Cycles Gladiator Chardonnay 2014 (CA)
+                                                    </p>
+                                                    <p class="text-body-emphasis">Kendall Jackson Chardonnay 2013 (CA)
+                                                    </p>
+                                                    <p class="text-body-emphasis">Bramito Chardonnay 2016 (IT)</p>
+                                                </div>
+                                            </div>
+                                            <!-- End List -->
+
+                                            <!-- List 2-->
+                                            <div class="col d-flex align-items-start">
+                                                <div>
+                                                    <h4 class="fs-2 text-body-emphasis">Chablis (Chardonnay-Based)</h4>
+                                                    <p class="text-body-emphasis">JM Brocard Chablis 2014 (FR)</p>
+                                                    <P class="text-body-emphasis">Puligny Montrachet 2014 (FR)</P>
+                                                    <p class="text-body-emphasis">Wm. Fevre Chablis 2015 (FR)</p>
+
+                                                    <h4 class="fs-2 text-body-emphasis">Pinot Gris</h4>
+                                                    <p class="text-body-emphasis">Montinore Pinot Gris 2014 (OR)</p>
+
+                                                </div>
+                                            </div>
+                                            <!-- End List -->
+
+                                            <!-- List 3-->
+                                            <div class="col d-flex align-items-start">
+                                                <div>
+                                                    <h4 class="fs-2 text-body-emphasis">Sauvignon Blanc</h4>
+                                                    <p class="text-body-emphasis">St. Supery Sauvignon Blanc 2016 (CA)
+                                                    </p>
+                                                    <P class="text-body-emphasis">Craggy Range Sauvignon Blanc 2016 (NZ)
+                                                    </P>
+                                                    <p class="text-body-emphasis">Cloudy Bay Sauvignon Blanc 2016 (NZ)
+                                                    </p>
+                                                    <p class="text-body-emphasis">Villa Marie Sauvignon Blanc 2015 (NZ)
+                                                    </p>
+
+                                                    <h4 class="fs-2 text-body-emphasis">Viognier</h4>
+                                                    <p class="text-body-emphasis">The Hermit Crab Viognier 2014 (NZ)</p>
+
+                                                </div>
+                                            </div>
+                                            <!-- End List -->
+
+                                            <!-- List 4 -->
+                                            <div class="col d-flex align-items-start">
+                                                <div>
+                                                    <h4 class="fs-2 text-body-emphasis">Riesling</h4>
+                                                    <p class="text-body-emphasis">Poet’s Leap Riesling 2015 (WA)</p>
+                                                    <P class="text-body-emphasis">St. Michelle Riesling 2015 (WA)</P>
+                                                    <p class="text-body-emphasis">Eroica Riesling 2014 (WA)</p>
+                                                </div>
+                                            </div>
+                                            <!-- End List -->
+
+                                            <!-- List 5 -->
+                                            <div class="col d-flex align-items-start">
+                                                <div>
+                                                    <h4 class="fs-2 text-body-emphasis">Rosé</h4>
+                                                    <p class="text-body-emphasis">Miraval Rosé 2015 (FR)</p>
+                                                    <p class="text-body-emphasis">Gerard Bertrand Rosé 2015 (FR)</p>
+                                                    <p class="text-body-emphasis">Long Shadows Dazzle Rosé 2016 (WA)</p>
+                                                </div>
+                                            </div>
+                                            <!-- End List -->
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End White Wine -->
+
+                            <!-- Bubble Section -->
+                            <div class="row justify-content-center">
+                                <div id="bubbleSection" class="col-12">
+                                    <div class="container px-1 py-5" id="hanging-icons">
+                                        <h2 class="pb-2 border-bottom">BUBBLES </h2>
+                                        <div class="row g-6 py-6 row-cols-2 row-cols-lg-3">
+
+                                            <!-- List 1-->
+                                            <div class="col d-flex align-items-start">
+                                                <div>
+                                                    <p class="text-body-emphasis">Argyle Vintage Brut 2013 OR</p>
+                                                    <P class="text-body-emphasis">L’Ermitage Brut CA</P>
+                                                    <p class="text-body-emphasis">Michelle Brut WA</p>
+                                                    <p class="text-body-emphasis">Veuve Clicquot FR</p>
+                                                    <p class="text-body-emphasis">Mamamango Mascato</p>
+                                                </div>
+                                            </div>
+                                            <!-- End List -->
+
+                                            <!-- List 2-->
+                                            <div class="col d-flex align-items-start">
+                                                <div>
+                                                    <p class="text-body-emphasis">Borgoluce Prosecco Brut</p>
+                                                    <P class="text-body-emphasis">Rive Della Chiesa Prosecco</P>
+                                                    <p class="text-body-emphasis">LaMarca Prosecco</p>
+                                                    <p class="text-body-emphasis">Dom Perignon 2006 FR</p>
+                                                    <p class="text-body-emphasis">Treveri Rose WA</p>
+
+                                                </div>
+                                            </div>
+                                            <!-- End List -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Buubles -->
+                        </div>
+                        <!-- End Wine Content -->
+
+                        <!-- Cocktails content -->
+                        <div class="tab-pane fade" id="cocktails" role="tabpanel" aria-labelledby="cocktailsTab">
+                            <!-- Centering Content -->
+                            <div class="row justify-content-center align-items-center">
+                                <div class="col-12 col-md-8">
+                                    <div class="container px-3 py-5">
+                                        <h2 class="pb-2 text-center">COCKTAILS</h2>
+                                        <div class="row g-6 py-4 row-cols-1 row-cols-md-2">
+                                            <!-- List 1-->
+                                            <div class="col d-flex justify-content-center">
+                                                <div>
+                                                    <p class="text-body-emphasis">Kolkata 75</p>
+                                                    <p class="text-body-emphasis">Goan Mule</p>
+                                                    <p class="text-body-emphasis">Cinnamon Imli</p>
+                                                    <p class="text-body-emphasis">Fire Bird Martini</p>
+                                                </div>
+                                            </div>
+                                            <!-- End List -->
+
+                                            <!-- List 2-->
+                                            <div class="col d-flex justify-content-center">
+                                                <div>
+                                                    <p class="text-body-emphasis">Mango Monk</p>
+                                                    <p class="text-body-emphasis">Sunshine Smile</p>
+                                                    <p class="text-body-emphasis">Curry Margarita</p>
+                                                </div>
+                                            </div>
+                                            <!-- End List -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Cocktails content -->
+
+
+
+                        <!-- Spirits content -->
+                        <div class="tab-pane fade" id="spirits" role="tabpanel" aria-labelledby="spiritsTab">
+
+                            <!-- Title -->
+                            <div class="justify-content-center">
+                                <h1 class="pb-2 text-center"> SPIRITS </h1>
+                            </div>
+                            <!-- End Title -->
+
+                            <!-- Sub-tabs -->
+                            <div class="row mb-4">
+                                <div class="col">
+                                    <!-- Sub Tab List -->
+                                    <div class="nav justify-content-center" id="subMenuTabs" role="tablist">
+                                        <a class="nav-link submenu-text-size subtext" id="whiskeyTab"
+                                            href="#whiskeySection">Whiskey</a>
+                                        <a class="nav-link submenu-text-size subtext" id="rumTab" href="#rumSection">Rum
+                                            & Cognac</a>
+                                        <a class="nav-link submenu-text-size subtext" id="ginTab"
+                                            href="#ginSection">Tequila, Gin & Vodka</a>
+                                    </div>
+                                    <!-- End Sub Tab List-->
+                                </div>
+                            </div>
+                            <!-- End Sub tabs-->
+
+                            <!-- Whiskey Section -->
+                            <div class="row justify-content-center">
+                                <div id="whiskeySection" class="col-12">
+                                    <div class="container px-1 py-5" id="hanging-icons">
+                                        <h2 class="pb-2 border-bottom">WHISKEY </h2>
+                                        <div class="row g-6 py-6 row-cols-2 row-cols-lg-4">
+
+                                            <!-- List 1-->
+                                            <div class="col d-flex align-items-start">
+                                                <div>
+                                                    <p class="text-body-emphasis">Amrut</p>
+                                                    <P class="text-body-emphasis">Amrut Fusion</P>
+                                                    <p class="text-body-emphasis">Angel’s Envy</p>
+                                                    <p class="text-body-emphasis">Balvenie 12 Yr</p>
+                                                    <p class="text-body-emphasis">Basil Hayden’s Bourbon</p>
+                                                    <p class="text-body-emphasis">Bulleit Bourbon</p>
+                                                    <p class="text-body-emphasis">Bulleit Rye</p>
+                                                    <p class="text-body-emphasis">Booker’s Bourbon</p>
+                                                </div>
+                                            </div>
+                                            <!-- End List -->
+
+                                            <!-- List 2-->
+                                            <div class="col d-flex align-items-start">
+                                                <div>
+                                                    <p class="text-body-emphasis">Chivas Regal</p>
+                                                    <P class="text-body-emphasis">Glenlivet 12 Yr</P>
+                                                    <p class="text-body-emphasis">Glenfiddich 15 Yr</p>
+                                                    <p class="text-body-emphasis">Glenmorangie</p>
+                                                    <p class="text-body-emphasis">H. McKenna 10 Yr</p>
+                                                    <p class="text-body-emphasis">Hakushu 12 Yr</p>
+                                                    <p class="text-body-emphasis">Hibiki</p>
+                                                    <p class="text-body-emphasis">Westland</p>
+
+                                                </div>
+                                            </div>
+                                            <!-- End List -->
+
+                                            <!-- List 3-->
+                                            <div class="col d-flex align-items-start">
+                                                <div>
+                                                    <p class="text-body-emphasis">Jack Daniels</p>
+                                                    <P class="text-body-emphasis">Jack Daniels Rye</P>
+                                                    <p class="text-body-emphasis">Jameson Irish</p>
+                                                    <p class="text-body-emphasis">Jameson Irish Reserve</p>
+                                                    <p class="text-body-emphasis">Jim Beam</p>
+                                                    <p class="text-body-emphasis">Johnny Walker Black</p>
+                                                    <p class="text-body-emphasis">Johnny Walker Platinum</p>
+                                                    <p class="text-body-emphasis">Johnny Walker Blue Label</p>
+
+                                                </div>
+                                            </div>
+                                            <!-- End List -->
+
+                                            <!-- List 4-->
+                                            <div class="col d-flex align-items-start">
+                                                <div>
+                                                    <p class="text-body-emphasis">Knob Creek</p>
+                                                    <P class="text-body-emphasis">Knob Creek Rye</P>
+                                                    <p class="text-body-emphasis">Maker’s Mark</p>
+                                                    <p class="text-body-emphasis">Macallan 12 Yr</p>
+                                                    <p class="text-body-emphasis">McKenna Bourbon</p>
+                                                    <p class="text-body-emphasis">Suntory Toki</p>
+                                                    <p class="text-body-emphasis">The Yamazaki 12 Yr</p>
+                                                    <p class="text-body-emphasis">The Yamazaki 18 Yr</p>
+
+                                                </div>
+                                            </div>
+                                            <!-- End List -->
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End whiskey -->
+
+                            <!-- Rum Section -->
+                            <div class="row justify-content-center">
+                                <div id="rumSection" class="col-12">
+                                    <div class="container px-1 py-5" id="hanging-icons">
+                                        <h2 class="pb-2 border-bottom">RUM & COGNAC </h2>
+                                        <div class="row g-6 py-6 row-cols-2 row-cols-lg-4">
+
+                                            <!-- List 1-->
+                                            <div class="col d-flex align-items-start">
+                                                <div>
+                                                    <p class="text-body-emphasis">Bacardi Superior</p>
+                                                    <P class="text-body-emphasis">Bacardi 8 Yr</P>
+                                                    <p class="text-body-emphasis">Captain Morgan</p>
+                                                    <p class="text-body-emphasis">House Spirits Katun</p>
+                                                    <p class="text-body-emphasis">Kirk & Sweeney</p>
+                                                    <p class="text-body-emphasis">Malibu</p>
+                                                    <p class="text-body-emphasis">Myers</p>
+                                                </div>
+                                            </div>
+                                            <!-- End List -->
+
+                                            <!-- List 2-->
+                                            <div class="col d-flex align-items-start">
+                                                <div>
+
+
+                                                    <P class="text-body-emphasis">Old Monk</P>
+                                                    <p class="text-body-emphasis">Zaya 12yr</p>
+                                                    <p class="text-body-emphasis">Clear Creek Apple Brandy</p>
+                                                    <h3> Conag </h3>
+                                                    <p class="text-body-emphasis">H. McKenna 10 Yr</p>
+                                                    <p class="text-body-emphasis">Hakushu 12 Yr</p>
+                                                </div>
+                                            </div>
+                                            <!-- End List -->
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Rum -->
+
+                            <!-- Gin Section -->
+                            <div class="row justify-content-center">
+                                <div id="ginSection" class="col-12">
+                                    <div class="container px-1 py-5" id="hanging-icons">
+                                        <h2 class="pb-2 border-bottom">TEQUILA, GIN & VODKA </h2>
+                                        <div class="row g-6 py-6 row-cols-2 row-cols-lg-3">
+
+                                            <!-- List 1-->
+                                            <div class="col d-flex align-items-start">
+                                                <div>
+                                                    <h3 class="fs-2 text-body-emphasis">Tequila</h3>
+                                                    <p class="text-body-emphasis">Don Julio 1942</p>
+                                                    <P class="text-body-emphasis">Don Julio Blanco</P>
+                                                    <p class="text-body-emphasis">Hornitos Black</p>
+                                                    <p class="text-body-emphasis">Hornitos Reposado</p>
+                                                    <p class="text-body-emphasis">Kirk</p>
+                                                    <p class="text-body-emphasis">1800 Añejo</p>
+                                                </div>
+                                            </div>
+                                            <!-- End List -->
+
+                                            <!-- List 2-->
+                                            <div class="col d-flex align-items-start">
+                                                <div>
+                                                    <h3 class="fs-2 text-body-emphasis">Gin</h3>
+                                                    <p class="text-body-emphasis">Aviation</p>
+                                                    <P class="text-body-emphasis">Bombay Sapphire</P>
+                                                    <p class="text-body-emphasis">Boodles</p>
+                                                    <p class="text-body-emphasis">206 Counter Gin</p>
+                                                    <p class="text-body-emphasis">Gordon’s</p>
+                                                    <p class="text-body-emphasis">Hendricks</p>
+                                                    <p class="text-body-emphasis">Nolet’s</p>
+                                                    <p class="text-body-emphasis">Tanqueray</p>
+
+                                                </div>
+                                            </div>
+                                            <!-- End List -->
+
+                                            <!-- List 3-->
+                                            <div class="col d-flex align-items-start">
+                                                <div>
+                                                    <h3 class="fs-2 text-body-emphasis">Vodka</h3>
+                                                    <p class="text-body-emphasis">Grey Goose</p>
+                                                    <P class="text-body-emphasis">Hot Monkey Peppercorn</P>
+                                                    <p class="text-body-emphasis">Ketel One</p>
+                                                    <p class="text-body-emphasis">Tito’s</p>
+
+                                                </div>
+                                            </div>
+                                            <!-- End List -->
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Gin -->
+
+                        </div>
+                        <!-- End Spirits content -->
+
+                        <!-- Beverages content -->
+                        <div class="tab-pane fade" id="beverages" role="tabpanel" aria-labelledby="beveragesTab">
+                            <!-- Centering Content -->
+                            <div class="row justify-content-center align-items-center">
+                                <div class="col-12 col-md-8">
+                                    <div class="container px-3 py-5">
+                                        <h2 class="pb-2 text-center">BEVERAGES</h2>
+                                        <div class="row g-6 py-4 row-cols-1 row-cols-md-2">
+                                            <!-- List 1-->
+                                            <div class="col d-flex justify-content-center">
+                                                <div>
+                                                    <p class="text-body-emphasis">Sweet / Mango Lassi</p>
+                                                    <p class="text-body-emphasis">Salty Lassi</p>
+                                                    <p class="text-body-emphasis">Coke / Diet Coke </p>
+                                                    <p class="text-body-emphasis">Sprite / Lemonade </p>
+                                                    <p class="text-body-emphasis">Perrier</p>
+                                                    <p class="text-body-emphasis">San Pellegrino</p>
+                                                    <p class="text-body-emphasis">Hot Chai</p>
+                                                    <p class="text-body-emphasis">Filter Coffee / Cold Coffee</p>
+                                                </div>
+                                            </div>
+                                            <!-- End List -->
+
+                                            <!-- List 2-->
+                                            <div class="col d-flex justify-content-center">
+                                                <div>
+                                                    <p class="text-body-emphasis">Salty Lime Soda</p>
+                                                    <p class="text-body-emphasis">Mirchi Punch </p>
+                                                    <P class="text-body-emphasis">Mango Nojito</P>
+                                                    <P class="text-body-emphasis">Viva Goa </P>
+
+
+                                                </div>
+                                            </div>
+                                            <!-- End List -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Beverages content -->
+
+                        <!-- Beer content -->
+                        <div class="tab-pane fade" id="beer" role="tabpanel" aria-labelledby="beerTab">
+                            <!-- Title -->
+                            <div class="justify-content-center">
+                                <h1 class="pb-2 text-center"> BEER & OTHERS </h1>
+                            </div>
+                            <!-- End Title -->
+
+                            <!-- Sub-tabs -->
+                            <div class="row mb-4">
+                                <div class="col">
+                                    <!-- Sub Tab List -->
+                                    <div class="nav justify-content-center" id="subMenuTabs" role="tablist">
+                                        <a class="nav-link submenu-text-size subtext" id="beerTab"
+                                            href="#beerSection">Beer </a>
+                                        <a class="nav-link submenu-text-size subtext" id="ciderTab"
+                                            href="#ciderSection">Cider, Wines & Ports</a>
+                                    </div>
+                                    <!-- End Sub Tab List-->
+                                </div>
+                            </div>
+                            <!-- End Sub tabs-->
+
+                            <!-- Beer Section -->
+                            <div class="row justify-content-center">
+                                <div id="beerSection" class="col-12">
+                                    <div class="container px-1 py-5" id="hanging-icons">
+                                        <h2 class="pb-2 border-bottom">Beer (Lagers, Ales, and IPAs) </h2>
+                                        <div class="row g-6 py-6 row-cols-2 row-cols-lg-3">
+
+                                            <!-- List 1-->
+                                            <div class="col d-flex align-items-start">
+                                                <div>
+                                                    <p class="text-body-emphasis">King Fisher (12oz / 22oz)</p>
+                                                    <P class="text-body-emphasis">Taj Mahal (12oz / 22oz)</P>
+                                                    <p class="text-body-emphasis">Haywards 5000 (12oz / 22oz)</p>
+                                                    <p class="text-body-emphasis">pFreim Pilsner (16oz)</p>
+                                                    <p class="text-body-emphasis">pFreim IPA (16oz)</p>
+                                                </div>
+                                            </div>
+                                            <!-- End List -->
+
+                                            <!-- List 2-->
+                                            <div class="col d-flex align-items-start">
+                                                <div>
+                                                    <p class="text-body-emphasis">AK Amber</p>
+                                                    <P class="text-body-emphasis">Stella Artois</P>
+                                                    <p class="text-body-emphasis">Elysian Space Dust IPA</p>
+                                                    <p class="text-body-emphasis">10 Barrel IPA</p>
+                                                    <p class="text-body-emphasis">Red Hook ESB</p>
+                                                </div>
+                                            </div>
+                                            <!-- End List -->
+
+                                            <!-- List 3-->
+                                            <div class="col d-flex align-items-start">
+                                                <div>
+                                                    <p class="text-body-emphasis">Wells Bombardier Premium Ale (16oz)
+                                                    </p>
+                                                    <p class="text-body-emphasis">The Commons Pink Peppercorn (16oz)</p>
+                                                    <P class="text-body-emphasis">Deschutes BlackButte Porter</P>
+                                                    <p class="text-body-emphasis">Ketel One</p>
+                                                    <p class="text-body-emphasis">Paulner Oktoberfest Marzen</p>
+
+                                                </div>
+                                            </div>
+                                            <!-- End List -->
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End BEER -->
+
+                            <!-- Cider Section -->
+                            <div class="row justify-content-center">
+                                <div id="ciderSection" class="col-12">
+                                    <div class="container px-1 py-5" id="hanging-icons">
+                                        <h2 class="pb-2 border-bottom">Cider, Wines & Ports </h2>
+                                        <div class="row g-6 py-6 row-cols-2 row-cols-lg-2">
+
+                                            <!-- List 1-->
+                                            <div class="col d-flex align-items-start">
+                                                <div>
+                                                    <h4> Cider </h4>
+                                                    <p class="text-body-emphasis">Angry Orchard Hard Cider</p>
+                                                    <P class="text-body-emphasis">Seattle Cider</P>
+
+                                                </div>
+                                            </div>
+                                            <!-- End List -->
+
+                                            <!-- List 2-->
+                                            <div class="col d-flex align-items-start">
+                                                <div>
+                                                    <h4> Dessert Wines </h4>
+                                                    <p class="text-body-emphasis">Frambrosia </p>
+                                                    <P class="text-body-emphasis">Limoncello </P>
+                                                    <p class="text-body-emphasis">Sichel Sauternes</p>
+                                                    <p class="text-body-emphasis">Otima 10 Port</p>
+                                                    <p class="text-body-emphasis">Sangria </p>
+                                                </div>
+                                            </div>
+                                            <!-- End List -->
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Cider -->
+
+                        </div>
+                        <!-- End Main Tab content-->
+
+                    </div>
+                    <!-- End Menu class-->
+                </div>
+                <!-- End Menu Container-->
+
+            </div>
+            <!-- End Main Container-->
+    </section>
+    <!-- End Menu-->
+
+    <!-- Features -->
+    <section class="py-7 py-md-9 overflow-hidden">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8 col-lg-6 text-center">
+                    <!-- Heading -->
+                    <h2 class="mb-2">Our Finest <em>Wine</em> Collections</h2>
+
+                    <!-- Subheading -->
+                    <p class="mb-6">
+                        Taste the Finest Wines
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <!-- Slider -->
+                    <div class="flickity-viewport-visible"
+                        data-flickity='{"cellAlign": "left", "contain": true, "imagesLoaded": true, "pageDots": false}'>
+                        <div class="w-100 px-2" style="max-width: 320px">
+                            <!-- Card -->
+                            <div class="card border-0">
+                                <!-- Image -->
+                                <a href="assets/img/F-wine-01.png" class="glightbox ratio ratio-1x1" data-gallery="..">
+                                    <img src="assets/img/F-wine-01.png" class="img-fluid mb-3" alt="...">
+                                </a>
+
+                                <!-- Body -->
+                                <div class="card-body">
+                                    <!-- Heading -->
+                                    <div class="row mb-2">
+                                        <div class="col">
+                                            <h5 class="mb-0">Merlot</h5>
+                                        </div>
+                                        <div class="col-auto">
+                                            <span class="fs-4 font-serif text-body-emphasis"> </span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Text -->
+                                    <p class="mb-0">Canoe Ridge Merlot 2013 (WA)</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="w-100 px-2" style="max-width: 320px">
+                            <!-- Card -->
+                            <div class="card border-0">
+                                <!-- Image -->
+                                <a href="assets/img/F-wine-02.png" class="glightbox ratio ratio-1x1" data-gallery="..">
+                                    <img src="assets/img/F-wine-02.png" class="img-fluid mb-3" alt="...">
+                                </a>
+
+                                <!-- Body -->
+                                <div class="card-body">
+                                    <!-- Heading -->
+                                    <div class="row mb-2">
+                                        <div class="col">
+                                            <h5 class="mb-0">Rosé</h5>
+                                        </div>
+                                        <div class="col-auto">
+                                            <span class="fs-4 font-serif text-body-emphasis"> </span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Text -->
+                                    <p class="mb-0">Gerard Bertrand Rosé 2015 (FR)</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="w-100 px-2" style="max-width: 320px">
+                            <!-- Card -->
+                            <div class="card border-0">
+                                <!-- Image -->
+                                <a href="assets/img/F-wine-03.jpeg" class="glightbox ratio ratio-1x1" data-gallery="..">
+                                    <img src="assets/img/F-wine-03.jpeg" class="img-fluid mb-3" alt="...">
+                                </a>
+                                <!-- Body -->
+                                <div class="card-body">
+                                    <!-- Heading -->
+                                    <div class="row mb-2">
+                                        <div class="col">
+                                            <h5 class="mb-0">Chardonnay</h5>
+                                        </div>
+                                        <div class="col-auto">
+                                            <span class="fs-4 font-serif text-body-emphasis"> </span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Text -->
+                                    <p class="mb-0">Au Contraire Chardonnay (CA)</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="w-100 px-2" style="max-width: 320px">
+                            <!-- Card -->
+                            <div class="card border-0">
+                                <!-- Image -->
+                                <a href="assets/img/F-wine-04.png" class="glightbox ratio ratio-1x1" data-gallery="..">
+                                    <img src="assets/img/F-wine-04.png" class="img-fluid mb-3" alt="...">
+                                </a>
+                                <!-- Body -->
+                                <div class="card-body">
+                                    <!-- Heading -->
+                                    <div class="row mb-2">
+                                        <div class="col">
+                                            <h5 class="mb-0">Mourvèdre</h5>
+                                        </div>
+                                        <div class="col-auto">
+                                            <span class="fs-4 font-serif text-body-emphasis"> </span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Text -->
+                                    <p class="mb-0">Juan Gil Mourvèdre 2014 (SP)</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="w-100 px-2" style="max-width: 320px">
+                            <!-- Card -->
+                            <div class="card border-0">
+                                <!-- Image -->
+                                <a href="assets/img/F-wine-05.png" class="glightbox ratio ratio-1x1" data-gallery="..">
+                                    <img src="assets/img/F-wine-05.png" class="img-fluid mb-3" alt="...">
+                                </a>
+                                <!-- Body -->
+                                <div class="card-body">
+                                    <!-- Heading -->
+                                    <div class="row mb-2">
+                                        <div class="col">
+                                            <h5 class="mb-0">Pinot Noir</h5>
+                                        </div>
+                                        <div class="col-auto">
+                                            <span class="fs-4 font-serif text-body-emphasis"> </span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Text -->
+                                    <p class="mb-0">Willa Kenzie Aliette Pinot Noir 2013 (OR)</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="w-100 px-2" style="max-width: 320px">
+                            <!-- Card -->
+                            <div class="card border-0">
+                                <!-- Image -->
+                                <a href="assets/img/F-wine-06.png" class="glightbox ratio ratio-1x1" data-gallery="..">
+                                    <img src="assets/img/F-wine-06.png" class="img-fluid mb-3" alt="...">
+                                </a>
+
+                                <!-- Body -->
+                                <div class="card-body">
+                                    <!-- Heading -->
+                                    <div class="row mb-2">
+                                        <div class="col">
+                                            <h5 class="mb-0">Viognier</h5>
+                                        </div>
+                                        <div class="col-auto">
+                                            <span class="fs-4 font-serif text-body-emphasis"> </span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Text -->
+                                    <p class="mb-0">The Hermit Crab Viognier 2014 (NZ)</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- RESERVATION -->
+    <section class="py-7 py-md-9" style="background-color: #344E41;" id="reservation">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8 col-lg-6 text-center">
+                    <!-- Heading -->
+                    <h2 class="mb-6" style="color: orange;">MAKE ONLINE RESERVATION</h2>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-12 text-center">
+                    <!-- Spacing -->
+                    <div class="my-4"></div>
+
+                    <!-- Button -->
+                    <a href="https://www.yelp.com/reservations/nirmals-seattle" target="_blank" style="color: white;"
+                        class="btn btn-outline-primary">
+                        Reserve a table
+                    </a>
+                </div>
+            </div>
+
+            <div class="row justify-content-center mt-5">
+                <div class="col-lg-8 text-center">
+                    <div class="block-decoration block-decoration-1 py-3">
+                        <!-- Text -->
+                        <p class="mb-2 text-xs text-center" style="color: white;">or call us:</p>
+
+                        <!-- Phone -->
+                        <a class="display-6 font-serif text-decoration-none" style="color: white;"
+                            href="tel:+12066839701">
+                            +1 (206) 683-9701
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End RESERVATION -->
+
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const lightbox = GLightbox({ selector: '.glightbox' });
+        });
+    </script>
+
+
+    <!-- Book A Table button -->
+    <a href="https://www.yelp.com/reservations/nirmals-seattle" target="_blank" class="btn text-white text-dark-hover"
+        id="book-table-btn" style="display: none;">
+        Book A Table
+    </a>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const button = document.getElementById("book-table-btn");
+            const cateringButton = document.getElementById("catering-btn");
+            const cateringSection = document.querySelector(".slider");
+            let lastScrollY = 0;
+
+            window.addEventListener("scroll", () => {
+                const currentScrollY = window.scrollY;
+
+                // Check if catering elements exist
+                if (cateringButton && cateringSection) {
+                    const rect = cateringSection.getBoundingClientRect();
+
+                    if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+                        // Slider section is in view
+                        button.style.display = "none";  // Hide Book A Table button
+                        cateringButton.style.display = "block";  // Show Catering button
+                    } else {
+                        cateringButton.style.display = "none";
+
+                        // Show Book A Table button only if scrolled down beyond 200px (example)
+                        if (currentScrollY > 200) {
+                            button.style.display = "block";
+                        } else {
+                            button.style.display = "none";
+                        }
+                    }
+                } else {
+                    // If catering elements missing, just show Book A Table button when scrolled down
+                    if (currentScrollY > 200) {
+                        button.style.display = "block";
+                    } else {
+                        button.style.display = "none";
+                    }
+                }
+
+                // Update lastScrollY after logic so direction check works next time
+                lastScrollY = currentScrollY;
+            });
+        });
+    </script>
+
+
+    <!-- FOOTER -->
+    {{> partials/footer}}
+
+    <!-- TOAST -->
+    {{> partials/toast}}
+
+    <!-- JAVASCRIPT -->
+    {{> partials/scripts}}
+
+    <!-- Menu List-->
+    {{> partials/menulist}}
+
+</body>
+
+</html>

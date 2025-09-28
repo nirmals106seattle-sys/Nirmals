@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{> partials/head title="Nirmal's Restaurant"}}
+
+    <!-- GLightbox -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
+    <!-- BigPicture (optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bigpicture/dist/bigpicture.min.js"></script>
+
+    <!-- Leaflet (optional) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="assets/css/user.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    {{> partials/navbar variant="dark" toggle="true" page="career.html"}}
+
+    <!-- Header -->
+    <header class="career-header">
+        <div class="container text-center">
+            <h3 class="career-title">Join Our Team</h3>
+            <h6 class="career-subtitle">
+                We’re looking for incredible people to build on our strong momentum. 
+                Help us power the brands you know and love.
+            </h6>
+        </div>
+    </header>
+
+    <!-- Application Form -->
+    <section class="py-5">
+        <div class="container">
+            <!-- Success/Error Alert -->
+            <div id="form-alert" class="alert d-none" role="alert"></div>
+
+            <form id="kt_careers_form" enctype="multipart/form-data" class="career-form">
+                <h4 class="fs-1 text-gray-800 w-bolder mb-6">Apply Now</h4>
+
+                <!-- Name -->
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <label for="first_name" class="form-label required">First Name</label>
+                        <input type="text" id="first_name" name="first_name" class="form-control" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="last_name" class="form-label required">Last Name</label>
+                        <input type="text" id="last_name" name="last_name" class="form-control" required>
+                    </div>
+                </div>
+
+                <!-- Contact -->
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <label for="email" class="form-label required">Email</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="mobileno" class="form-label required">Mobile No</label>
+                        <input type="tel" id="mobileno" name="mobileno" class="form-control" required>
+                    </div>
+                </div>
+
+                <!-- Age & City -->
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <label for="age" class="form-label required">Age</label>
+                        <input type="number" id="age" name="age" class="form-control" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="city" class="form-label required">City</label>
+                        <input type="text" id="city" name="city" class="form-control" required>
+                    </div>
+                </div>
+
+                <!-- Position -->
+                <div class="mb-4">
+                    <label for="position" class="form-label required">Position</label>
+                    <select id="position" name="position" class="form-select" required>
+                        <option value="">Select Position</option>
+                        <option value="Bartender">Bartender</option>
+                        <option value="Host">Host/Hostess</option>
+                        <option value="Runner">Runner</option>
+                        <option value="Server">Server</option>
+                        <option value="Line Cook">Line Cook</option>
+                        <option value="Dishwasher">Dishwasher</option>
+                    </select>
+                </div>
+
+                <!-- Expected Salary & Start Date -->
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <label for="salary" class="form-label required">Expected Salary</label>
+                        <input type="number" id="salary" name="salary" class="form-control" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="date" class="form-label required">Start Date</label>
+                        <input type="date" id="date" name="date" class="form-control" required>
+                    </div>
+                </div>
+
+                <!-- Gender -->
+                <div class="mb-4">
+                    <label for="gender" class="form-label required">Gender</label>
+                    <select id="gender" name="gender" class="form-select" required>
+                        <option value="">Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Others">Others</option>
+                    </select>
+                </div>
+
+                <!-- Experience -->
+                <div class="mb-4">
+                    <label for="experience" class="form-label required">Experience (years)</label>
+                    <input type="number" id="experience" name="experience" class="form-control" required>
+                </div>
+
+                <!-- Resume -->
+                <div class="mb-4">
+                    <label for="resume" class="form-label required">Resume/CV</label>
+                    <input type="file" id="resume" name="resume" class="form-control" required>
+                </div>
+
+                <!-- Additional Info -->
+                <div class="mb-4">
+                    <label for="additional_info" class="form-label">Additional Info (optional)</label>
+                    <textarea id="additional_info" name="additional_info" class="form-control" rows="3"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Apply Now</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Book A Table button -->
+    <a href="https://www.yelp.com/reservations/nirmals-seattle" target="_blank" class="btn btn-book" id="book-table-btn" style="display: none;">
+        Book A Table
+    </a>
+ <!-- Social Icons -->
+    <!-- Sticky social icons near right bottom -->
+    <div class="social-icons-sticky-bottom ">
+
+      <a href="tel:+12066839701" aria-label="Call">
+        <i class="fas fa-phone"></i></a>
+
+      <a href="https://x.com/NirmalsSeattle" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+
+      <a href="https://www.facebook.com/nirmalseattle" target="_blank" aria-label="Facebook"><i
+          class="fab fa-facebook-f"></i></a>
+
+      <a href="https://www.instagram.com/nirmalsseattle/" target="_blank" aria-label="Instagram"><i
+          class="fab fa-instagram"></i></a>
+
+      <a href="https://www.google.com/maps?q=106+Occidental+Ave+S,+Seattle,+WA+98104" target="_blank"
+        aria-label="Location"><i class="fas fa-map-marker-alt"></i></a>
+
+
+
+    </div>
+    
+    <!-- Footer -->
+    {{> partials/footer}}
+    {{> partials/toast}}
+    {{> partials/scripts}}
+
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    const form = document.getElementById("kt_careers_form");
+    const alertBox = document.getElementById("form-alert");
+
+    form.addEventListener("submit", async function(e) {
+        e.preventDefault();
+
+        // ---------------- Resume Validation ----------------
+        const resume = document.getElementById("resume").files[0];
+        if (!resume) {
+            showAlert("Please upload your resume", "danger");
+            return;
+        }
+        if (resume.size > 5 * 1024 * 1024) {
+            showAlert("Resume must be less than 5MB", "danger");
+            return;
+        }
+        const allowed = [".pdf", ".doc", ".docx"];
+        const ext = resume.name.substring(resume.name.lastIndexOf(".")).toLowerCase();
+        if (!allowed.includes(ext)) {
+            showAlert("Only PDF, DOC, DOCX files are allowed", "danger");
+            return;
+        }
+
+        // ---------------- Form Submission ----------------
+        const formData = new FormData(form);
+
+        try {
+            const response = await fetch("/api/apply", {
+                method: "POST",
+                body: formData
+            });
+            const data = await response.json();
+
+            if (response.ok && data.success) {
+                showAlert(data.message, "success");
+                form.reset();
+            } else {
+                // Optional: show multiple errors as a list
+                if (data.message && data.message.includes(",")) {
+                    const errors = data.message.split(",");
+                    alertBox.innerHTML = "<ul>" + errors.map(err => `<li>${err.trim()}</li>`).join("") + "</ul>";
+                    alertBox.className = "alert alert-danger";
+                    alertBox.classList.remove("d-none");
+                } else {
+                    showAlert(data.message || "Failed to submit application", "danger");
+                }
+            }
+        } catch (error) {
+            console.error(error);
+            showAlert("An error occurred. Please try again later.", "danger");
+        }
+    });
+
+    // ---------------- Book Table Button ----------------
+    const button = document.getElementById("book-table-btn");
+    window.addEventListener("scroll", () => {
+        if(button) button.style.display = window.scrollY > 200 ? "block" : "none";
+    });
+
+    // ---------------- Helper Function ----------------
+    function showAlert(message, type = "success") {
+        alertBox.className = `alert alert-${type}`;
+        alertBox.textContent = message;
+        alertBox.classList.remove("d-none");
+    }
+});
+</script>
+
+
+</body>
+</html>

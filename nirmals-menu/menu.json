@@ -1,0 +1,58 @@
+{
+  "lunch": {
+    "L-appetizers": [
+      {
+        "title": "Samosa",
+        "description": "Deep-fried pastry with a spiced filling usually made with potatoes, spices, and herbs.",
+        "image": "assets/img/samosa.jpg"
+      }
+    ],
+    "L-mumbai_street_food": [
+      {
+        "title": "Vada Pav",
+        "description": "Batter fried spiced potato patty on pav with garlic chutney.",
+        "image": "assets/img/vadapav.jpg"
+      },
+      {
+        "title": "Mumbai Pav Bhaji",
+        "description": "Mashed vegetables cooked with chef’s spice mix and butter, served with pan-fried buns.",
+        "image": "assets/img/Pav bhagi.jpg"
+      },
+      {
+        "title": "Misal Pav",
+        "description": "Sprouted moth beans and white pea curry with savory crisp and soft pav.",
+        "image": "assets/img/Misal.jpg"
+      }
+    ],
+    "L-thali": [
+      {
+        "title": "Special Veg Thali",
+        "description": "An Indian Special House Thali with a combination of kebab, rice, bread, curries, lentils, soup, and a sweet dish.",
+        "image": "assets/img/2veg thali.jpg"
+      },
+      {
+        "title": "Special Non-Veg Thali",
+        "description": "An Indian Special House Thali with a combination of rice, bread, chicken & veg curry, lentils, and a sweet dish.",
+        "image": "assets/img/mthali.jpg"
+      }
+    ],
+    "L-breads": [
+      {
+        "title": "Plain Naan",
+        "image": "assets/img/naan3.jpg"
+      },
+      {
+        "title": "Butter Naan",
+        "image": "assets/img/1Butter naan.jpg"
+      },
+      {
+        "title": "Garlic Naan",
+        "image": "assets/img/1Garlic naan.jpg"
+      },
+      {
+        "title": "Plain Roti",
+        "image": "assets/img/naan.jpg"
+      }
+    ]
+  }
+}

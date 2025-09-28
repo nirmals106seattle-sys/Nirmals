@@ -1,0 +1,117 @@
+//
+// nav.scss
+//
+
+/* General nav link styles */
+.nav-link {
+  --#{$prefix}nav-link-active-color: #{$nav-link-active-color};
+  @include text-xs(900);
+  position: relative;
+  transition: color 0.2s, border-bottom 0.2s;
+}
+
+/* Main menu section background */
+.menu-color {
+  background-color: #344E41; /* dark green */
+  color: #fff;
+
+  h1, h3 {
+    color: azure;
+    text-align: center;
+  }
+}
+
+/* Main tabs: Lunch, Dinner, Jain, Dessert */
+#menuTabs .nav-link {
+  margin: 0 10px;          /* spacing between tabs */
+  padding: 8px 12px;       /* vertical + horizontal padding */
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  background: none;
+  color: #FFD700;          /* golden text */
+}
+
+#menuTabs .nav-link:hover,
+#menuTabs .nav-link.active {
+  color: #FFD700;
+  background: none;
+  border: none;
+}
+
+/* Sub-tabs: Appetizers, Mumbai Street Food, etc. */
+.nav .submenu-text-size.subtext {
+  margin: 0 12px;
+  padding: 8px 12px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  background: none;
+  border: none;
+}
+
+.nav .submenu-text-size.subtext:hover {
+  color: #FFD700;
+}
+
+.nav .submenu-text-size.subtext.active {
+  color: #FFD700;
+  border-bottom: 2px solid #FFD700;
+}
+
+/* Section titles spacing */
+#menuContent h3 {
+  margin-top: 25px;
+  margin-bottom: 20px;
+  font-size: 1.6rem;
+  text-align: center;
+  color: azure;
+}
+
+/* Section container background */
+.tab-content > .tab-pane {
+  background-color: #344E41;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* Spacing between sub-section items */
+#menuContent .items,
+#menuContent .grid {
+  margin-bottom: 20px;
+}
+
+/* Links inside sections */
+.tab-content a {
+  color: #FFD700;
+  text-decoration: none;
+}
+
+.tab-content a:hover {
+  color: #fff;
+}
+
+/* Optional: underline animation for nav links (non-tabs/pills) */
+.nav:not(.nav-tabs):not(.nav-pills) .nav-link::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: var(--#{$prefix}nav-link-padding-x);
+  right: var(--#{$prefix}nav-link-padding-x);
+  height: calc(var(--#{$prefix}border-width) * 3);
+  background-color: $primary;
+  transform: translateY(.5rem);
+  opacity: 0;
+  transition: all .1s;
+}
+
+.nav:not(.nav-tabs, .nav-pills) .nav-link.active::after {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Custom font */
+.custom-font {
+  font-family: 'Goudy Old Style', serif;
+  text-transform: capitalize;
+}

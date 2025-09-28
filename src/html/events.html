@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {{> partials/head title="Nirmals Restaurant"}}
+
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  {{> partials/navbar variant="light" toggle="false" page="news-and-events.html"}}
+
+  <!-- ARTICLE -->
+  <article class="pt-10 pt-md-12">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6 text-center">
+          <!-- Preheading -->
+          <h6 class="text-xs text-primary" id="event-preheading">Loading...</h6>
+
+          <!-- Heading -->
+          <h1 class="display-2 mb-4" id="event-heading">Loading...</h1>
+
+          <!-- Subheading -->
+          <p class="mb-6" id="event-subheading">Loading...</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <!-- Image -->
+          <figure class="mb-6 text-center">
+            <img class="img-fluid" id="event-image" src="" alt="Event Image" />
+          </figure>
+        </div>
+      </div>
+
+      <!-- RSVP -->
+      <div class="card text-center">
+        <div class="card-body">
+          <h2 class="fw-bold" style="color: orange;">RSVP</h2>
+          <p class="card-text">Kindly RSVP to reserve your spot—we look forward to seeing you!</p>
+          <a id="event-rsvp-main" href="#" class="btn btn-primary text-light-hover fw-bold"
+            style="border-radius: .5rem; width: 10%;">Loading...</a>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-8">
+          <!-- Heading -->
+          <h2 class="fw-bold mt-6 mb-3" id="order-title">Loading...</h2>
+
+          <!-- Text -->
+          <div id="order-text"></div>
+
+          <!-- Divider -->
+          <hr class="mt-6 mt-md-9 mb-0" />
+        </div>
+      </div>
+    </div>
+  </article>
+
+
+
+
+
+  <!-- NEWSLETTER -->
+  <section class="py-7 py-md-9" style="background-color: #c06722;">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6 text-center">
+          <!-- Heading -->
+          <h2 class="mb-2">Sign Up for Exclusive Events</h2>
+          <!-- Subheading -->
+          <p class="mb-4" style="color: white;">
+            Join our community to get access to exclusive events, special offers, and exciting updates straight to
+            your inbox!
+          </p>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-6">
+          <!-- Formspree Email Form -->
+          <form id="newsletter-form">
+            <div class="row gx-3">
+              <div class="col">
+                <input class="form-control" type="email" id="email-input" name="email"
+                  placeholder="Enter your email address" required />
+              </div>
+              <div class="col-auto">
+                <button type="submit" class="btn btn-outline-light">Subscribe</button>
+              </div>
+            </div>
+            <p id="form-warning" style="color: yellow; font-size: 0.9rem; margin-top: 10px;"></p>
+            <p id="form-success" style="color: lightgreen; font-size: 0.9rem; margin-top: 5px;"></p>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="card" style="
+   width: 18rem;
+   height: 15rem;
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  
+">
+    <div class="card-body">
+      <h5 class="fw-bold" style="color: orange; text-align: center;">Event Name</h5>
+      <p class="card-text">Kindly RSVP to reserve your spot—we look forward to seeing you!</p>
+      <a id="event-rsvp-side" href="#" class="btn btn-primary w-100 text-light-hover"
+        style="border-radius: .5rem;">Loading...</a>
+    </div>
+  </div>
+
+
+
+  <!-- Book A Table button -->
+  <a href="https://www.yelp.com/reservations/nirmals-seattle" target="_blank" class="btn text-white text-dark-hover"
+    id="book-table-btn" style="display: none;">
+    Book A Table
+  </a>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const button = document.getElementById("book-table-btn");
+      const cateringButton = document.getElementById("catering-btn");
+      const cateringSection = document.querySelector(".slider");
+      let lastScrollY = 0;
+
+      window.addEventListener("scroll", () => {
+        const currentScrollY = window.scrollY;
+
+        // Check if catering elements exist
+        if (cateringButton && cateringSection) {
+          const rect = cateringSection.getBoundingClientRect();
+
+          if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+            // Slider section is in view
+            button.style.display = "none";  // Hide Book A Table button
+            cateringButton.style.display = "block";  // Show Catering button
+          } else {
+            cateringButton.style.display = "none";
+
+            // Show Book A Table button only if scrolled down beyond 200px (example)
+            if (currentScrollY > 200) {
+              button.style.display = "block";
+            } else {
+              button.style.display = "none";
+            }
+          }
+        } else {
+          // If catering elements missing, just show Book A Table button when scrolled down
+          if (currentScrollY > 200) {
+            button.style.display = "block";
+          } else {
+            button.style.display = "none";
+          }
+        }
+
+        // Update lastScrollY after logic so direction check works next time
+        lastScrollY = currentScrollY;
+      });
+    });
+  </script>
+
+  <!-- Subscription JS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.getElementById('newsletter-form');
+      const emailInput = document.getElementById('email-input');
+      const warning = document.getElementById('form-warning');
+      const success = document.getElementById('form-success');
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const email = emailInput.value.trim();
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        // Clear previous messages
+        warning.textContent = "";
+        success.textContent = "";
+
+        // Validate email
+        if (email === "") {
+          warning.textContent = "⚠️ Please fill in your email address.";
+          emailInput.focus();
+          return;
+        }
+
+        if (!emailRegex.test(email)) {
+          warning.textContent = "⚠️ Please enter a valid email address.";
+          emailInput.focus();
+          return;
+        }
+
+        // Send to Formspree (replace with your actual Formspree form ID)
+        fetch("https://formspree.io/f/mvgrnkwz", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ email: email })
+        })
+          .then(response => {
+            if (response.ok) {
+              success.textContent = "✅ Thank you! You've been subscribed.";
+              emailInput.value = "";
+            } else {
+              warning.textContent = "❌ Failed to send. Please try again.";
+            }
+          })
+          .catch(error => {
+            console.error("Formspree error:", error);
+            warning.textContent = "❌ An error occurred. Please try again.";
+          });
+      });
+    });
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch("./assets/json/events.json")
+        .then(res => res.json())
+        .then(event => {
+          // Preheading / Heading / Subheading
+          document.getElementById("event-preheading").textContent = event.preheading;
+          document.getElementById("event-heading").textContent = event.heading;
+          document.getElementById("event-subheading").textContent = event.subheading;
+
+          // Image
+          document.getElementById("event-image").src = event.image;
+
+          // RSVP buttons (main + sidebar)
+          const rsvpBtnMain = document.getElementById("event-rsvp-main");
+          const rsvpBtnSide = document.getElementById("event-rsvp-side");
+
+          if (rsvpBtnMain) {
+            rsvpBtnMain.textContent = event.rsvp.text;
+            rsvpBtnMain.href = event.rsvp.link || "#";
+          }
+
+          if (rsvpBtnSide) {
+            rsvpBtnSide.textContent = event.rsvp.text;
+            rsvpBtnSide.href = event.rsvp.link || "#";
+          }
+
+          // Online Ordering section
+          document.getElementById("order-title").textContent = event.onlineOrdering.title;
+          const orderText = document.getElementById("order-text");
+          orderText.innerHTML = event.onlineOrdering.paragraphs
+            .map(p => `<p>${p}</p>`)
+            .join("");
+        })
+        .catch(err => console.error("Error loading event data:", err));
+    });
+  </script>
+
+
+
+
+
+
+  <!-- FOOTER -->
+  {{> partials/footer}}
+
+  <!-- TOAST -->
+  {{> partials/toast}}
+
+  <!-- JAVASCRIPT -->
+  {{> partials/scripts}}
+</body>
+
+</html>

@@ -1,0 +1,311 @@
+{
+  "lunch": {
+    "L-appetizers": [
+      {
+        "title": "Samosa",
+        "description": "Deep-fried pastry with a spiced filling usually made with potatoes, spices, and herbs.",
+        "image": "assets/img/samosa.jpg"
+      }
+    ],
+    "L-mumbai_street_food": [
+      {
+        "title": "Vada Pav",
+        "description": "Batter fried spiced potato patty on pav with garlic chutney.",
+        "image": "assets/img/vadapav.jpg"
+      },
+      {
+        "title": "Mumbai Pav Bhaji",
+        "description": "Mashed vegetables cooked with chef’s spice mix and butter, served with pan-fried buns.",
+        "image": "assets/img/Pav bhagi.jpg"
+      },
+      {
+        "title": "Misal Pav",
+        "description": "Sprouted moth beans and white pea curry with savory crisp and soft pav.",
+        "image": "assets/img/Misal.jpg"
+      }
+    ],
+    "L-thali": [
+      {
+        "title": "Special Veg Thali",
+        "description": "An Indian Special House Thali with a combination of kebab, rice, bread, curries, lentils, soup, and a sweet dish.",
+        "image": "assets/img/2veg thali.jpg"
+      },
+      {
+        "title": "Special Non-Veg Thali",
+        "description": "An Indian Special House Thali with a combination of rice, bread, chicken & veg curry, lentils, and a sweet dish.",
+        "image": "assets/img/mthali.jpg"
+      }
+    ],
+    "L-breads": [
+      {
+        "title": "Plain Naan",
+        "image": "assets/img/naan3.jpg"
+      },
+      {
+        "title": "Butter Naan",
+        "image": "assets/img/1Butter naan.jpg"
+      },
+      {
+        "title": "Garlic Naan",
+        "image": "assets/img/1Garlic naan.jpg"
+      },
+      {
+        "title": "Plain Roti",
+        "image": "assets/img/naan.jpg"
+      }
+    ]
+  },
+  "dinner": {
+    "D-appetizers": [
+      {
+        "title": "Samosa (v)",
+        "description": "Pyramid fried savory pastry stuffed with curried potatoes and green peas.",
+        "image": "assets/img/samosa.jpg"
+      },
+      {
+        "title": "Harabara Tikki (v)",
+        "description": "Chopped spinach, paneer, jalapeno, mint, cilantro fritters in delicious panko coating.",
+        "image": "assets/img/Harabara.jpg"
+      },
+      {
+        "title": "Paneer Amritsari",
+        "description": "Cubes of paneer marinated in yogurt, and spice.",
+        "image": "assets/img/paneer amristari.jpg"
+      },
+      {
+        "title": "Tandoori Chicken",
+        "description": "Grilled chicken leg meat marinated in yogurt and tandoori spices.",
+        "image": "assets/img/tandoorichicken.jpg"
+      },
+      {
+        "title": "Lamb Seekh Kebab",
+        "description": "Popular and well known flavorful goat meat croquettes, seasoned with warm Indian spices and grilled.",
+        "image": "assets/img/seekh kebab.jpg"
+      },
+      {
+        "title": "Chicken Angare",
+        "description": "Tandoor grilled chicken thigh marinated with red chilis, spices and yogurt.",
+        "image": "assets/img/Angare.jpg"
+      }
+    ],
+    "D-veg": [
+      {
+        "title": "Bharwan Simla Mirch",
+        "description": "Bell pepper stuffed with stir-fried vegetables, paneer, and topped with spicy tomato sauce.",
+        "image": "assets/img/Bharwan Mirch.jpg"
+      },
+      {
+        "title": "Paneer Makhan Masala",
+        "description": "Spicy paneer tikka in rich tomato cashew sauce, and finished with cream and butter.",
+        "image": "assets/img/Paneer Makhan Masala.jpg"
+      },
+      {
+        "title": "Vegetable Kofta Curry",
+        "description": "Mince vegetable dumplings cooked in creamy spinach and cashew curry.",
+        "image": "assets/img/veggieballs_naan.jpg"
+      },
+      {
+        "title": "Sarson Ka Saag with Makkai Roti",
+        "description": "Authentic North Indian green curry, mustard greens cooked with spices and served with corn flour bread.",
+        "image": "assets/img/saag.jpg"
+      },
+      {
+        "title": "Yellow Dal",
+        "description": "Mixed yellow lentils w/ginger, garlic, green chilies, turmeric and tempered w/cumin, mustard, and fenugreek.",
+        "image": "assets/img/Yellow daal.jpg"
+      },
+      {
+        "title": "Dhingri Mutter",
+        "description": "Button mushrooms and green peas in a rich cashew tomato sauce flavored with fennel.",
+        "image": "assets/img/Dhingri Mutter.jpg"
+      },
+      {
+        "title": "Veg Kolhapuri",
+        "description": "Spiced gram flour tiki w/char grilled onions, coconut, chili, stone flower, and poppy seeds.",
+        "image": "assets/img/3.jpg"
+      }
+    ],
+    "D-nonveg": [
+      {
+        "title": "Lal Mas",
+        "description": "Succulent mutton pieces fried with a base of onion, tomato, yogurt, and a host of other spices | Caution: Dish may contain small bones.",
+        "image": "assets/img/3.jpg"
+      },
+      {
+        "title": "Malwani Pompano Fry",
+        "description": "Maharashtrian style whole Pompano fish marinated w/spice paste and kokum coated with rice flour and pan fried chilis and wrapped in banana leaf. A Parsi delicacy.",
+        "image": "assets/img/malwani.jpg"
+      },
+      {
+        "title": "Dungeness Crab Curry",
+        "description": "Alaskan wild-caught whole Dungeness crab cooked in a spicy tamarind coconut curry served in shell | Limited availability.",
+        "image": "assets/img/crabmasala7.jpg"
+      },
+      {
+        "title": "Beef Ularthiyathu",
+        "description": "Kerala beef fry cooked with onion, coconut, peppercorn, fennel seeds and curry leaves.",
+        "image": "assets/img/Beef Ular.jpg"
+      },
+      {
+        "title": "Pork Vindaloo",
+        "description": "Pork cubes marinate in malt vinegar, homemade ground spice, green chilis & garlic.",
+        "image": "assets/img/Pork.jpg"
+      },
+      {
+        "title": "Saoji Chicken Rassa",
+        "description": "Maharashtrian spicy chicken curry with char grilled onion, coconut, chili, cardamom, cloves, nutmeg, star anise, and stone flower.",
+        "image": "assets/img/Saoji chicken.jpg"
+      },
+      {
+        "title": "Chicken Patiala",
+        "description": "Punjabi dish with yoghurt & spice marinaded chicken in a cashew and creamy curry base.",
+        "image": "assets/img/Murgh Handi Lazeez.jpg"
+      }
+    ],
+    "D-breads": [
+      {
+        "title": "Plain Naan",
+        "image": "assets/img/naan3.jpg"
+      },
+      {
+        "title": "Butter Naan",
+        "image": "assets/img/1Butter naan.jpg"
+      },
+      {
+        "title": "Garlic Naan",
+        "image": "assets/img/garlicnaan.jpg"
+      },
+      {
+        "title": "Plain Roti",
+        "image": "assets/img/naan3.jpg"
+      },
+      {
+        "title": "Pudina Roti",
+        "image": "assets/img/1Pudina roti.jpg"
+      },
+      {
+        "title": "Methi Roti",
+        "image": "assets/img/1Methi roti.jpg"
+      },
+      {
+        "title": "Dosa",
+        "image": "assets/img/aDosa.jpg"
+      },
+      {
+        "title": "Basmati Rice",
+        "image": "assets/img/rice.jpg"
+      },
+      {
+        "title": "Gobi Rice",
+        "image": "assets/img/Gobi rice.jpg"
+      }
+    ],
+    "D-biryani": [
+      {
+        "title": "Vegetable Dum Biryani",
+        "description": "Long grain basmati rice cooked in a sealed pot, layered with vegetables and flavored with aromatic spices.",
+        "image": "assets/img/3.jpg"
+      },
+      {
+        "title": "Chicken Dum Biryani",
+        "description": "Long grain basmati rice cooked in a sealed pot, layered with chicken and flavored with aromatic spices.",
+        "image": "assets/img/Goat Biriyani.jpg"
+      },
+      {
+        "title": "Goat Dum Biryani",
+        "description": "Long grain basmati rice cooked in a sealed pot, layered with goat and flavored with aromatic spices.",
+        "image": "assets/img/Goat Biriyani.jpg"
+      }
+    ],
+    "D-mumbai_street_food": [
+      {
+        "title": "Vada Pav",
+        "description": "Batter fried spiced potato patty on pav with garlic chutney.",
+        "image": "assets/img/vadapav.jpg"
+      },
+      {
+        "title": "Mumbai Pav Bhaji",
+        "description": "Mashed vegetables cooked with chef’s spice mix and butter, served with pan-fried buns.",
+        "image": "assets/img/Pav bhagi.jpg"
+      },
+      {
+        "title": "Misal Pav",
+        "description": "Sprouted moth beans and white pea curry with savory crisp and soft pav.",
+        "image": "assets/img/Misal.jpg"
+      }
+    ]
+  },
+  "jain": [
+    {
+      "title": "Makkai Palak",
+      "description": "Corn cooked with fresh spinach and mild Indian spices, Jain style.",
+      "image": "assets/img/makkai_palak.jpg"
+    },
+    {
+      "title": "Palak Paneer",
+      "description": "Spinach and cottage cheese cooked in a mild, creamy sauce without onion or garlic.",
+      "image": "assets/img/palak_paneer.jpg"
+    },
+    {
+      "title": "Paneer Bhurji",
+      "description": "Scrambled cottage cheese cooked with fresh tomatoes and Indian spices, Jain style.",
+      "image": "assets/img/paneer_bhurji.jpg"
+    }
+  ],
+
+  "dessert": [
+    {
+      "title": "Kulfi",
+      "description": "Traditional Indian ice cream.",
+      "image": "assets/img/017.JPG"
+    },
+    {
+      "title": "Tropical Ice Cream",
+      "description": "Chikoo or Turmeric Ginger (vegan).",
+      "image": "assets/img/3.jpg"
+    },
+    {
+      "title": "Chikoo Ice Cream & Chocolate Cake",
+      "description": "Our award-winning dessert.",
+      "image": "assets/img/3.jpg"
+    },
+    {
+      "title": "Chocolate Cake",
+      "description": "",
+      "image": "assets/img/3.jpg"
+    },
+    {
+      "title": "Rasmalai",
+      "description": "Delicious patties of soft chena with pistachio spiced milk.",
+      "image": "assets/img/3.jpg"
+    },
+    {
+      "title": "Gulab Jamun",
+      "description": "Traditional fried dumplings in sugar syrup.",
+      "image": "assets/img/3.jpg"
+    },
+    {
+      "title": "Jalebi",
+      "description": "Piping spirals made of fermented batter into hot oil, soaked in warm sugar syrup.",
+      "image": "assets/img/3.jpg"
+    }
+  ],
+
+  "popular": [
+    {
+      "title": "Murgh Handi Lazeez",
+      "description": "Chef’s special chicken curry cooked in handi style.",
+      "image": "assets/img/Murgh Handi Lazeez.jpg"
+    },
+    {
+      "title": "Tandoori Chicken",
+      "description": "Grilled chicken leg meat marinated in yogurt and tandoori spices.",
+      "image": "assets/img/tandoori.jpg"
+    },
+    {
+      "title": "Vegetable Kofta Curry",
+      "description": "Mince vegetable dumplings cooked in creamy spinach and cashew curry.",
+      "image": "assets/img/veg kofta.jpg"
+    }
+  ]
+}

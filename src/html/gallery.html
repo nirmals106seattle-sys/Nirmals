@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {{> partials/head title="Nirmals Restaurant"}}
+
+
+  <style>
+    .gallery img {
+      cursor: pointer;
+      border-radius: 8px;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+  </style>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  {{> partials/navbar variant="dark" toggle="true" page="gallery.html"}}
+
+  <!-- HEADER -->
+
+  <header data-jarallax data-speed=".3" style="background-image: url(assets/img/drink12.png)">
+    <div class="pt-10 pb-8 pt-md-15 pb-md-13 bg-black bg-opacity-50">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-8 col-lg-6 text-center">
+            <!-- Heading 
+              <h1 class="display-6 fw-bold text-white">Our Gallery</h1>-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- Social Icons -->
+  <!-- Sticky social icons near right bottom -->
+  <div class="social-icons-sticky-bottom ">
+
+    <a href="tel:+12066839701" aria-label="Call">
+      <i class="fas fa-phone"></i></a>
+
+    <a href="https://x.com/NirmalsSeattle" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+
+    <a href="https://www.facebook.com/nirmalseattle" target="_blank" aria-label="Facebook"><i
+        class="fab fa-facebook-f"></i></a>
+
+    <a href="https://www.instagram.com/nirmalsseattle/" target="_blank" aria-label="Instagram"><i
+        class="fab fa-instagram"></i></a>
+
+    <a href="https://www.google.com/maps?q=106+Occidental+Ave+S,+Seattle,+WA+98104" target="_blank"
+      aria-label="Location"><i class="fas fa-map-marker-alt"></i></a>
+
+  </div>
+
+  <!-- Book a table button -->
+  <div class="book-table-wrapper">
+    <a href="https://www.yelp.com/reservations/nirmals-seattle" target="_blank" id="book-table-btn">
+      Book A Table
+    </a>
+  </div>
+
+  <!-- CAROUSEL 
+    <section class="pt-7 pt-md-9">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-8 col-lg-6 text-center">-->
+  <!-- Heading 
+            <h2 class="mb-2">Take a sneak peek</h2>-->
+
+  <!-- Subheading
+            <p class="mb-6">
+              Let these images whet your appetite - each dish a promise of an extraordinary dining experience.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12"> -->
+  <!-- Carousel 
+            <div data-flickity='{"wrapAround": true, "imagesLoaded": true}'>
+              <figure class="w-100">-->
+  <!-- Image 
+                <img class="img-fluid mb-4" src="assets/img/033.jpg" alt="..." />-->
+
+  <!-- Caption 
+                <figcaption class="text-center">From sizzling starters to decadent desserts, let our gallery tempt your taste buds before you even arrive 🥰</figcaption>
+              </figure>
+              <figure class="w-100">-->
+  <!-- Image 
+                <img class="img-fluid mb-4" src="assets/img/034.jpg" alt="..." />-->
+
+  <!-- Caption 
+                <figcaption class="text-center">From sizzling starters to decadent desserts, let our gallery tempt your taste buds before you even arrive 🥰</figcaption>
+              </figure>
+              <figure class="w-100">-->
+  <!-- Image
+                <img class="img-fluid mb-4" src="assets/img/035.jpg" alt="..." /> -->
+
+  <!-- Caption 
+                <figcaption class="text-center">From sizzling starters to decadent desserts, let our gallery tempt your taste buds before you even arrive 🥰</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>-->
+
+  <!-- GALLERY -->
+  <section class="py-7 py-md-9">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6 text-center">
+          <!-- Heading -->
+          <h2 class="mb-2">Our Gallery</h2>
+
+          <!-- Subheading -->
+          <p class="mb-6">A Glimpse Into the Heart of Our Menu</p>
+        </div>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="row gallery gx-3" id="galleryRow"></div>
+    </div>
+  </section>
+
+
+
+  <!-- RESERVATION -->
+  <section class="py-7 py-md-9" style="background-color: #344E41;" id="reservation">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6 text-center">
+          <!-- Heading -->
+          <h2 class="mb-6" style="color: orange;">MAKE ONLINE RESERVATION</h2>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-12 text-center">
+          <!-- Spacing -->
+          <div class="my-4"></div>
+
+          <!-- Button -->
+          <a href="https://www.yelp.com/reservations/nirmals-seattle" target="_blank" style="color: white;"
+            class="btn btn-outline-primary">
+            Reserve a table
+          </a>
+        </div>
+      </div>
+
+      <div class="row justify-content-center mt-5">
+        <div class="col-lg-8 text-center">
+          <div class="block-decoration block-decoration-1 py-3">
+            <!-- Text -->
+            <p class="mb-2 text-xs text-center" style="color: white;">or call us:</p>
+
+            <!-- Phone -->
+            <a class="display-6 font-serif text-decoration-none" style="color: white;" href="tel:+12066839701">
+              +1 (206) 683-9701
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+  <!-- Include Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Include GLightbox JS -->
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
+
+  <script>
+    // Load gallery.json dynamically
+    fetch("./assets/json/gallery.json")
+      .then(res => res.json())
+      .then(images => {
+        const galleryRow = document.getElementById("galleryRow");
+
+        images.forEach((img, i) => {
+          const col = document.createElement("div");
+          col.className = "col-6 col-sm-6 col-md-4";
+          col.innerHTML = `
+          <a href="${img.src}" class="glightbox" data-gallery="gallery1">
+            <img src="${img.src}" class="img-fluid mb-3" alt="${img.alt}">
+          </a>
+        `;
+          galleryRow.appendChild(col);
+        });
+
+        // Initialize Glightbox after rendering
+        GLightbox({ selector: ".glightbox" });
+      })
+      .catch(err => console.error("Error loading gallery.json:", err));
+  </script>
+
+
+  <!-- Book A Table button -->
+  <a href="https://www.yelp.com/reservations/nirmals-seattle" target="_blank" class="btn text-white text-dark-hover"
+    id="book-table-btn" style="display: none;">
+    Book A Table
+  </a>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const button = document.getElementById("book-table-btn");
+      const cateringButton = document.getElementById("catering-btn");
+      const cateringSection = document.querySelector(".slider");
+      let lastScrollY = 0;
+
+      window.addEventListener("scroll", () => {
+        const currentScrollY = window.scrollY;
+
+        // Check if catering elements exist
+        if (cateringButton && cateringSection) {
+          const rect = cateringSection.getBoundingClientRect();
+
+          if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+            // Slider section is in view
+            button.style.display = "none";  // Hide Book A Table button
+            cateringButton.style.display = "block";  // Show Catering button
+          } else {
+            cateringButton.style.display = "none";
+
+            // Show Book A Table button only if scrolled down beyond 200px (example)
+            if (currentScrollY > 200) {
+              button.style.display = "block";
+            } else {
+              button.style.display = "none";
+            }
+          }
+        } else {
+          // If catering elements missing, just show Book A Table button when scrolled down
+          if (currentScrollY > 200) {
+            button.style.display = "block";
+          } else {
+            button.style.display = "none";
+          }
+        }
+
+        // Update lastScrollY after logic so direction check works next time
+        lastScrollY = currentScrollY;
+      });
+    });
+  </script>
+
+
+  <!-- FOOTER -->
+  {{> partials/footer}}
+
+  <!-- TOAST -->
+  {{> partials/toast}}
+
+  <!-- JAVASCRIPT -->
+  {{> partials/scripts }}
+
+
+</body>
+
+</html>

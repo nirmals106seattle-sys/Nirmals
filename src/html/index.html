@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {{> partials/head title="Nirmals Restaurant"}}
+
+  <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bigpicture/dist/bigpicture.min.js"></script>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- Font Awesome CDN (place in <head> only once for the whole page) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- NAVBAR -->
+  {{> partials/navbar variant="dark" toggle="true"}}
+
+
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+
+    .fullpage-container {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    .carousel-container {
+      flex: 6;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .carousel-caption {
+      text-shadow: none !important;
+      background: none !important;
+      padding: 0 !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+    }
+
+    .carousel-inner,
+    .carousel-item {
+      height: 100%;
+    }
+
+    .carousel-item .bg-img {
+      height: 100%;
+      background-size: cover;
+      filter: brightness(1.1);
+      background-position: center;
+    }
+
+    .carousel-caption {
+      color: white;
+      text-shadow: 0 2px 8px rgba(247, 235, 235, 0.8);
+      background-color: rgba(233, 229, 229, 0.35);
+      padding: 1rem 2rem;
+      border-radius: 10px;
+      max-width: 80%;
+      margin: 0 auto;
+      top: 50%;
+      transform: translateY(-50%);
+      bottom: auto;
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      display: none !important;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+
+    .content-section {
+      flex: 4;
+      overflow-y: auto;
+      padding: 2rem;
+      background-color: white;
+      text-align: center;
+    }
+
+    .content-section h1 {
+      font-family: 'Arial Black', sans-serif;
+    }
+
+    /* Universal caption improvements */
+    .carousel-caption {
+      padding: 1.5rem 1rem;
+      color: white;
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    }
+
+    .parallax-catering-section {
+      height: 70vh;
+      background-image: url('assets/img/crabmasala9.jpg');
+      /* Ensure path is correct */
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      color: white;
+    }
+
+    .parallax-overlay {
+      background-color: rgba(240, 237, 237, 0.5);
+      /* Optional dark overlay */
+      padding: 2rem;
+      border-radius: 10px;
+      max-width: 700px;
+      width: 90%;
+    }
+
+    .parallax-overlay h4 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .equal-image {
+      height: 400px;
+      /* Adjust as needed */
+      object-fit: contain;
+    }
+
+    @media (max-width: 768px) {
+      .bg-img {
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+      }
+    }
+
+    /* Let the rect use the page background color */
+    .bd-placeholder-img {
+      color: var(--bs-body-bg);
+    }
+
+    .bd-placeholder-img rect {
+      fill: currentColor;
+    }
+
+    /* Change indicators to grey */
+    .carousel-indicators [data-bs-target] {
+      background-color: grey;
+      /* default state */
+    }
+
+    /* Optional: make active one darker */
+    .carousel-indicators .active {
+      background-color: #444;
+      /* darker grey when active */
+    }
+
+ /*<!-- 3D Hover CSS with Prominent Images & Toast Button -->*/
+
+    .location-card {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+
+  .location-card:hover {
+    transform: translateY(-15px) rotateX(3deg) rotateY(3deg);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+  }
+
+  .card-img-wrapper {
+    height: 300px; /* Taller image */
+    overflow: hidden;
+    border-radius: 10px;
+  }
+
+  .location-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image fills container */
+    transition: transform 0.4s ease, filter 0.4s ease;
+  }
+
+  .location-card:hover img {
+    transform: scale(1.1); /* Zoom image on hover */
+    filter: brightness(1.05); /* Slight brightness pop */
+  }
+
+  .btn-order-online {
+    background-color: #e0b800;
+    color: white;
+    font-weight: 600;
+    padding: 10px 0;
+    font-size: 1rem;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .btn-order-online:hover {
+    background-color: #e0b800;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    color: white;
+    text-decoration: none;
+  }
+  </style>
+
+</head>
+<body>
+
+  
+  <!-- carousel SECTION (TOP 60%) -->
+  <div class="carousel-container" style="height: 60vh; position: relative;">
+    <div id="heroCarousel" class="carousel slide h-100" data-bs-ride="carousel">
+      <div class="carousel-inner h-100">
+
+        <div class="carousel-item position-relative h-100 ">
+          <div class="bg-img"
+            style="background-image: url('assets/img/front-Recovered.jpg'); background-position: center 50%;"></div>
+        </div>
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active position-relative h-100">
+          <div class="bg-img" style="background-image: url('assets/img/1_1.jpg'); background-position: center 35%;">
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item position-relative h-100 ">
+          <div class="bg-img"
+            style="background-image: url('assets/img/tofukebab3_1.jpg'); background-position: center 50%;"></div>
+        </div>
+
+
+        <!-- Slide 3 -->
+        <div class="carousel-item position-relative h-100">
+          <div class="bg-img"
+            style="background-image: url('assets/img/mixedstarters3_2.jpg'); background-position: center 45%; background-size: 50%;">
+          </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="carousel-item position-relative h-100 ">
+          <div class="bg-img"
+            style="background-image: url('assets/img/interior4_1.jpg'); background-position: center 50%;"></div>
+        </div>
+      </div>
+
+      <!-- Carousel Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- CONTENT (BOTTOM 40%) -->
+  <div id="infoBlock" class="content-section  text-dark p-4 rounded shadow" style="background-color: #344E41;">
+    <p style="color: white;">Dine-in, To-Go, Catering, Gift Voucher</p>
+
+    <div class="text-center">
+    <!-- Make Reservation Button -->
+<a id="reserveBtn" 
+   href="https://www.yelp.com/reservations/nirmals-seattle"
+   target="_blank" rel="noopener noreferrer" class="btn text-light-hover btn-primary mb-3"> Make reservation </a>
+
+    
+      <!-- Call Decorator Section -->
+
+      <!-- Text -->
+      <p class="mb-2 text-xs text-center" style="color: white;">or call us:</p>
+
+      <!-- Phone -->
+      <a class="font-serif text-decoration-none" style="color: white; font-size: 2rem;" href="tel:+12066839701">
+        +1 (206) 683-9701
+      </a>
+
+    </div>
+
+
+
+    <!-- Business Hours -->
+    <div class="d-flex justify-content-center gap-5 mb-3 py-3">
+      <div>
+        <p class="fw-bold mb-0" style="color: white;">Monday - Friday</p>
+        <p class="mb-1" style="color: white;">11:00 AM - 02:00 PM</p>
+        <p style="color: white;">05:30 PM - 10:00 PM</p>
+      </div>
+      <div>
+        <p class="fw-bold mb-0" style="color: white;">Saturday - Sunday</p>
+        <p class="mb-1" style="color: white;">12:00 PM - 03:00 PM</p>
+        <p style="color: white;">05:30 PM - 10:00 PM</p>
+      </div>
+    </div>
+
+    <!-- Address Section Below -->
+    <div class="text-center mb-4">
+      <p class="fw-bold mb-0" style="color: white;">Location</p>
+      <p class="mb-0">
+        <a href="https://www.google.com/maps?q=106+Occidental+Ave+S,+Seattle,+WA+98104" target="_blank"
+          class="text-dark text-decoration-none" style="color: white;">
+          <strong style="color: white;">106 Occidental Ave S</strong><br>
+          <strong style="color: white;"> Seattle, WA 98104</strong>
+        </a>
+      </p>
+    </div>
+
+    <!-- Social Icons -->
+    <!-- Sticky social icons near right bottom -->
+    <div class="social-icons-sticky-bottom ">
+
+      <a href="tel:+12066839701" aria-label="Call">
+        <i class="fas fa-phone"></i></a>
+
+      <a href="https://x.com/NirmalsSeattle" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+
+      <a href="https://www.facebook.com/nirmalseattle" target="_blank" aria-label="Facebook"><i
+          class="fab fa-facebook-f"></i></a>
+
+      <a href="https://www.instagram.com/nirmalsseattle/" target="_blank" aria-label="Instagram"><i
+          class="fab fa-instagram"></i></a>
+
+      <a href="https://www.google.com/maps?q=106+Occidental+Ave+S,+Seattle,+WA+98104" target="_blank"
+        aria-label="Location"><i class="fas fa-map-marker-alt"></i></a>
+
+
+
+    </div>
+
+
+
+  </div>
+
+  <!-- Book a table button -->
+  <div class="book-table-wrapper">
+    <a href="https://www.yelp.com/reservations/nirmals-seattle" target="_blank" id="book-table-btn">
+      Book A Table
+    </a>
+  </div>
+
+  <!-- Catering button -->
+  <a href="catering.html" class="btn text-white text-dark-hover" id="catering-btn" style="display: none;">
+    Catering
+  </a>
+
+
+<!-- Achievements -->
+<div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1" aria-current="true"></button>
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+        preserveAspectRatio="xMidYMid slice" focusable="false">
+        <rect width="100%" height="100%" fill="goldenrod"></rect>
+      </svg>
+      <div class="container">
+        <div class="carousel-caption text-white">
+          <p>Top Seattle Indian Restaurant for Special Occasions 2023 - <em>Seattle Eater</em></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+        preserveAspectRatio="xMidYMid slice" focusable="false">
+        <rect width="100%" height="100%" fill="goldenrod"></rect>
+      </svg>
+      <div class="container">
+        <div class="carousel-caption text-white">
+          <p>Top Seattle Indian Restaurant 2022 - <em>Seattle Eater</em></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+        preserveAspectRatio="xMidYMid slice" focusable="false">
+        <rect width="100%" height="100%" fill="goldenrod"></rect>
+      </svg>
+      <div class="container">
+        <div class="carousel-caption text-white">
+          <p>Reader's Choice Award - Best Indian Restaurant in Seattle - 2018, 2019 - <em>Seattle Magazine</em></p>
+          <p><a class="btn btn-lg btn-light" href="gallery.html">Browse gallery</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  <!-- EVENTS SECTION -->
+  <section class="py-7 py-md-9 border-bottom">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6 text-center">
+          <!-- Heading -->
+          <h2 class="mb-2">Upcoming Events</h2>
+
+          <!-- Subheading -->
+          <p class="mb-6">Join us for exciting events that bring people together.</p>
+        </div>
+      </div>
+      <div class="row">
+        <!-- Event 1 -->
+        <div class="col-12 mb-5">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-8 col-md-3">
+              <!-- Event Image -->
+              <img class="img-fluid rounded mb-4 mb-md-0" src="assets/img/F-wine-05.png" alt="Wine Tasting Night" />
+            </div>
+
+            <div class="col-md-7">
+              <!-- Event Details -->
+              <h4 class="font-weight-bold text-body-emphasis mb-2">Events for Every Occasion</h4>
+              <p class="font-serif text-body mb-3">
+                Embrace the spirit of community at our place, where connections are forged and memories are made, one
+                event at a time. </p>
+              <a href="events.html" class="btn text-light-hover btn-primary">Know More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- End of Achievements Carousel -->
+
+   <!-- BG IMG SECTION -->
+  <section class="parallax-catering-section">
+    <div class="">
+      <h4></h4>
+    </div>
+  </section>
+
+
+  <!-- Cocktail section with stacked cards -->
+  <section class="cocktail-slider-section">
+    <div class="container-fluid text-white text-center">
+      <div class="mb-5">
+        <h1 class="text-white mb-2 py-3">Discover the Art of Cocktails</h1>
+        <p class="text-white mb-5">
+          At the heart of every great gathering is a perfectly crafted cocktail. </br> Whether you're sipping a classic
+          like
+          an Old Fashioned or exploring adventurous infusions with seasonal fruits and herbs, our cocktail menu
+          is a celebration of flavor, balance, and creativity.
+        </p>
+      </div>
+
+      <div class="cocktail-gallery justify-content-center">
+
+        <div class="cocktail-card">
+          <div class="flip-inner">
+            <div class="card-front">
+              <img src="assets/img/cocktail4.jpg" alt="Curry Margarita" />
+            </div>
+            <div class="card-back">
+              <p class="cocktail-title">Curry Margarita</p>
+              <p>Tequila elevated with red chili, orange liqueur, and fresh ginger notes.</p>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="cocktail-card">
+          <div class="flip-inner">
+            <div class="card-front">
+              <img src="assets/img/sunshine.png" alt="Sunshine Smile" />
+            </div>
+            <div class="card-back">
+              <p class="cocktail-title">Sunshine Smile</p>
+              <p>Smooth rye blended with crisp apple, cardamom, and silky coconut cream.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="cocktail-card">
+          <div class="flip-inner">
+            <div class="card-front">
+              <img src="assets/img/cocktail5.jpg" alt="Cinnamon Imli" />
+            </div>
+            <div class="card-back">
+              <p class="cocktail-title">Cinnamon Imli</p>
+              <p>Bourbon layered with tamarind and warming cinnamon spice.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="cocktail-card">
+          <div class="flip-inner">
+            <div class="card-front">
+              <img src="assets/img/kolkata75.png" alt="Kolkata 75" />
+            </div>
+            <div class="card-back">
+              <p class="cocktail-title">Kolkata 75</p>
+              <p>Delicate dry gin, lemon, mango, finished with sparkling prosecco elegance.</p>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+        <div class="cocktail-card">
+          <div class="flip-inner">
+            <div class="card-front">
+              <img src="assets/img/cocktail11.jpg" alt="Goan Mule" />
+            </div>
+            <div class="card-back">
+              <p class="cocktail-title">Goan Mule</p>
+              <p>Vodka infused with masala-spiced syrup and invigorating ginger beer.</p>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="cocktail-card">
+          <div class="flip-inner">
+            <div class="card-front">
+              <img src="assets/img/gin.png" alt="Lemon Drop" />
+            </div>
+            <div class="card-back">
+              <p class="cocktail-title">Lemon Drop</p>
+              <p>A refreshing blend of vodka, lemon juice, and aromatic spices.</p>
+            </div>
+          </div>
+        </div>
+
+
+
+        <!-- Add more cards similarly -->
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- DISCOVER -->
+  <section class="pt-7 pt-md-9">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+          <!-- Divider -->
+          <hr class="hr-sm text-primary" />
+
+          <!-- Text -->
+          <p class="fs-lg lh-lg text-body-emphasis mb-5 mb-md-0">Take a break and enjoy a meal.</p>
+        </div>
+        <div class="col-md-4">
+          <!-- Media -->
+          <div class="media-decoration media-decoration-1 mb-5 mb-md-0">
+            <!-- Border -->
+            <div class="media-decoration-border" data-jarallax-element="-40"></div>
+
+            <!-- Image -->
+            <img class="media-decoration-img img-fluid" src="assets/img/2.jpg" alt="..." />
+          </div>
+        </div>
+        <div class="col-md-5 align-self-center mx-auto">
+          <!-- Heading -->
+          <h2 class="mb-2"><em>Always</em> an Amazing Experience at Nirmal's - Authentic Indian Restaurant</h2>
+
+          <!-- Text -->
+          <p class="mb-0">
+            At Nirmal's Indian Restaurant in Seattle, we offer more than just a meal—we deliver a culinary experience.
+            Our commitment to authentic Indian cuisine, warm hospitality, and a vibrant dining atmosphere makes every
+            visit memorable.
+            Located in the heart of Pioneer Square, we invite you to explore traditional and modern flavors of India.
+            Join our community and discover the best Indian dining Seattle has to offer
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us -->
+  <section class="py-7 py-md-9">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2 order-md-2 align-self-end">
+          <!-- Divider -->
+          <hr class="hr-sm text-primary" />
+
+          <!-- Text -->
+          <p class="fs-lg lh-lg text-body-emphasis mb-5 mb-md-0">"Food connects hearts. When you share a meal, you
+            share a piece of your soul" <br /> - <strong> Sunit Sharma</strong> </p>
+        </div>
+        <div class="col-md-4 order-md-3">
+          <!-- Media -->
+          <div class="media-decoration media-decoration-1 mb-5 mb-md-0">
+            <!-- Solid -->
+            <div class="media-decoration-solid" data-jarallax-element="-40"></div>
+
+            <!-- Border -->
+            <div class="media-decoration-border" data-jarallax-element="-40"></div>
+
+            <!-- Image -->
+            <img class="media-decoration-img img-fluid" src="assets/img/chef.jpg" alt="..." />
+          </div>
+        </div>
+        <div class="col-md-5 order-md-1 align-self-center mx-auto">
+          <!-- Heading -->
+          <h2 class="mb-2">Meet our amazing <em>chef</em> </h2>
+
+          <!-- Text -->
+          <p class="mb-0">
+            Nirmal's is proud to welcome our new <strong> Corporate Executive Chef <em>Sunit Sharma</em></strong>. He
+            joins us after a 27 year career as an accomplished
+            chef working with the world leaders in hospitality like <em> The Rits Carlton, The Taj, Starwood Hotels,
+              Planet Hollywood and Cidade de Goa....</em>
+            <a href="about-us.html" class="btn btn-outline-primary text-primary-hover mb-5 mb-md-0 border-0">Read
+              more</a>
+        </div>
+        </p>
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Catering Banner Section -->
+  <section class="catering-banner" style="margin: 0; padding: 0;">
+    <div class="container-fluid " style="margin: 0; padding: 0;">
+      <a href="catering.html" target="_blank">
+        <img src="assets/img/cat01.png" alt="Catering Banner" class="catering-img">
+      </a>
+    </div>
+  </section>
+
+
+  <!-- Gift Section -->
+  <section class="py-7 py-md-9 border-bottom">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6 text-center">
+          <!-- Heading -->
+          <h2 class="mb-2">Gift Card</h2>
+
+          <!-- Subheading -->
+          <p class="mb-6">Gift your loved one's</p>
+        </div>
+      </div>
+      <div class="row">
+        <!-- Event 1 -->
+        <div class="col-12 mb-5">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-md-7">
+              <h2 class="featurette-heading fw-normal lh-1">A Perfect Gift for Every Foodie</h2>
+              <p>Nirmal’s gift card is a thoughtful way to treat someone to a delicious meal. It gives the recipient
+                the freedom to choose what they enjoy most, making it a perfect gift for any occasion. Whether for a
+                celebration or just to show appreciation, it’s a convenient and enjoyable present.</p>
+              <a href="https://www.toasttab.com/nirmalseattle/giftcards" class="btn text-light-hover btn-primary"
+                target="_blank">Gift
+                card</a>
+            </div>
+            <div class="col-md-5">
+              <img class="featurette-image img-fluid mx-auto" width="500" height="500" src="assets/img/gift.png"
+                alt="Gift Image">
+
+            </div>
+          </div>
+        </div>
+  </section>
+
+  <!-- MENU -->
+  <section class="menu-section border-bottom py-7" aria-label="Nirmals Restaurant Menu Section">
+
+    <!-- Static heading block -->
+    <div class="menu-header text-center mb-5">
+      <h2 class="mb-3">Menu Options at Nirmals</h2>
+      <p class="lead">
+        Discover a curated selection of dishes, each crafted with the finest ingredients and inspired by authentic
+        flavors.
+      </p>
+      <p>We gladly accommodate <span style="color: #28a745; font-weight: bold;">allergies, intolerances, </span>and
+        <span style="color: #28a745; font-weight: bold;"> sensitivities.</span>
+      </p>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row align-items-md-stretch">
+        <!-- First column -->
+        <div class="col-md-6 mb-4">
+          <div class="image-container" style="background-image: url('assets/img/shank_sides3.jpg');">
+            <a href="menu.html#lunch" class="btn btn-green">Explore Menu</a>
+          </div>
+        </div>
+
+        <!-- Second column -->
+        <div class="col-md-6 mb-4">
+          <div class="image-container" style="background-image: url('assets/img/F-wine-02.jpeg');">
+            <a href="drink.html" class="btn btn-green">Explore BAR</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+   <!-- Features Dishes -->
+  <section class="py-7 py-md-9 overflow-hidden">
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6 text-center">
+          <!-- Heading -->
+          <h2 class="mb-2">Must <em>Try</em> (populars)</h2>
+
+          <!-- Subheading -->
+          <p class="mb-6">
+            Taste the Essence of Our Chef’s Inspiration.
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <!-- Slider -->
+          <div class="flickity-viewport-visible"
+            data-flickity='{"cellAlign": "left", "imagesLoaded": true, "pageDots": false}'>
+
+            <div class="w-100 px-2" style="max-width: 320px">
+              <!-- Card -->
+              <div class="card border-0">
+                <!-- Image -->
+                <a href="assets/img/Murgh Handi Lazeez.jpg" class="glightbox" data-gallery="..">
+                  <img src="assets/img/Murgh Handi Lazeez.jpg" class="img-fluid mb-3" alt="..."
+                    style="width: 90%; height: auto; display: block; margin-bottom: 1rem; border-radius: .5rem; ">
+                </a>
+
+                <!-- Body -->
+                <div class="card-body">
+                  <!-- Heading -->
+                  <div class="row mb-2">
+                    <div class="col">
+                      <h5 class="mb-0">Chicken Patiala</h5>
+                    </div>
+                    <div class="col-auto">
+                      <span class="fs-4 font-serif text-body-emphasis"></span>
+                    </div>
+                  </div>
+
+                  <!-- Text -->
+                  
+                  <p class="mb-0">Punjabi dish of chicken tikka cooked in a rich tomato cashew and cream gravy.</p>
+                </div>
+              </div>
+            </div>
+         
+
+            <div class="w-100 px-2" style="max-width: 320px">
+              <!-- Card -->
+              <div class="card border-0">
+                <!-- Image -->
+                <a href="assets/img/tandoori.jpg" class="glightbox" data-gallery="..">
+                  <img src="assets/img/tandoori.jpg" class="img-fluid mb-3" alt="..."
+                    style="width: 100%; height: auto; display: block; margin-bottom: 1rem; border-radius: 0.5rem;">
+                </a>
+
+                <!-- Body -->
+                <div class="card-body">
+                  <!-- Heading -->
+                  <div class="row mb-2">
+                    <div class="col">
+                      <h5 class="mb-0">Tandoori Chicken</h5>
+                    </div>
+                    <div class="col-auto">
+                      <span class="fs-4 font-serif text-body-emphasis"></span>
+                    </div>
+                  </div>
+
+                  <!-- Text -->
+                  <p class="mb-0">Grilled chicken leg meat marinated in yogurt and tandoori spices.</p>
+                </div>
+              </div>
+            </div>
+            <div class="w-100 px-2" style="max-width: 320px">
+              <!-- Card -->
+              <div class="card border-0">
+                <!-- Image -->
+                <a href="assets/img/veg kofta.jpg" class="glightbox" data-gallery="..">
+                  <img src="assets/img/veg kofta.jpg" class="img-fluid mb-3" alt="..."
+                    style="width: 100%; height: auto; display: block; margin-bottom: 1rem; border-radius: 0.5rem;">
+                </a>
+
+
+                <!-- Body -->
+                <div class="card-body">
+                  <!-- Heading -->
+                  <div class="row mb-2">
+                    <div class="col">
+                      <h5 class="mb-0">Vegetable Kofta Curry</h5>
+                    </div>
+                    <div class="col-auto">
+                      <span class="fs-4 font-serif text-body-emphasis"></span>
+                    </div>
+                  </div>
+
+                  <!-- Text -->
+                  <p class="mb-0">Mince vegetable dumplings cooked in creamy spinach and cashew curry.</p>
+                </div>
+              </div>
+            </div>
+            <div class="w-100 px-2" style="max-width: 320px">
+              <!-- Card -->
+              <div class="card border-0">
+                <!-- Image -->
+                <a href="assets/img/fish2.jpg" class="glightbox" data-gallery="..">
+                  <img src="assets/img/fish2.jpg" class="img-fluid mb-3" alt="..."
+                    style="width: 100%; height: auto; display: block; margin-bottom: 1rem; border-radius: 0.5rem;">
+                </a>
+
+
+                <!-- Body -->
+                <div class="card-body">
+                  <!-- Heading -->
+                  <div class="row mb-2">
+                    <div class="col">
+                      <h5 class="mb-0">Malwani Pampano Fry</h5>
+                    </div>
+                    <div class="col-auto">
+                      <span class="fs-4 font-serif text-body-emphasis"></span>
+                    </div>
+                  </div>
+
+                  <!-- Text -->
+                  <p class="mb-0">Maharashtrian style whole Pompano fish marinated with spice paste and kokum coated
+                    with rice flour and pan fried.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="w-100 px-2" style="max-width: 320px">
+              <!-- Card -->
+              <div class="card border-0">
+                <!-- Image -->
+                <a href="assets/img/dessert7.jpg" class="glightbox" data-gallery="..">
+                  <img src="assets/img/dessert7.jpg" class="img-fluid mb-3" alt="..."
+                    style="width: 100%; height: auto; display: block; margin-bottom: 1rem; border-radius: 0.5rem;">
+                </a>
+
+                <!-- Body -->
+                <div class="card-body">
+                  <!-- Heading -->
+                  <div class="row mb-2">
+                    <div class="col">
+                      <h5 class="mb-0">Jalebi</h5>
+                    </div>
+                    <div class="col-auto">
+                      <span class="fs-4 font-serif text-body-emphasis"></span>
+                    </div>
+                  </div>
+
+                  <!-- Text -->
+                  <p class="mb-0">Crisp spirals of fermented batter fried in ghee, soaked in warm sugar syrup.</p>
+                </div>
+              </div>
+            </div>
+            <div class="w-100 px-2" style="max-width: 320px">
+              <!-- Card -->
+              <div class="card border-0">
+                <!-- Image -->
+                <a href="assets/img/Angare.jpg" class="glightbox" data-gallery="..">
+                  <img src="assets/img/Angare.jpg" class="img-fluid mb-3" alt="..."
+                    style="width: 90%; height: auto; display: block; margin-bottom: 1rem; border-radius: 0.5rem;">
+                </a>
+
+
+                <!-- Body -->
+                <div class="card-body">
+                  <!-- Heading -->
+                  <div class="row mb-2">
+                    <div class="col">
+                      <h5 class="mb-0">Chicken Tikka Angara</h5>
+                    </div>
+                    <div class="col-auto">
+                      <span class="fs-4 font-serif text-body-emphasis"></span>
+                    </div>
+                  </div>
+
+                  <!-- Text -->
+                  <p class="mb-0">Tandoor grilled chicken thigh marinated with red chillis, spices and yoghurt.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- RESERVATION -->
+  <section class="py-7 py-md-9" style="background-color: #344E41;" id="reservation">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6 text-center">
+          <!-- Heading -->
+          <h2 class="mb-6" style="color: orange;">MAKE ONLINE RESERVATION</h2>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-12 text-center">
+          <!-- Spacing -->
+          <div class="my-4"></div>
+
+          <!-- Button -->
+          <a href="https://www.yelp.com/reservations/nirmals-seattle" target="_blank" style="color: white;"
+            class="btn btn-outline-primary">
+            Reserve a table
+          </a>
+        </div>
+      </div>
+
+      <div class="row justify-content-center mt-5">
+        <div class="col-lg-8 text-center">
+          <div class="block-decoration block-decoration-1 py-3">
+            <!-- Text -->
+            <p class="mb-2 text-xs text-center" style="color: white;">or call us:</p>
+
+            <!-- Phone -->
+            <a class="display-6 font-serif text-decoration-none" style="color: white;" href="tel:+12066839701">
+              +1 (206) 683-9701
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <!-- GALLERY -->
+  <section class="py-7 py-md-9">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6 text-center">
+          <!-- Unified Heading -->
+          <h2 class="mb-2">Our Gallery</h2>
+          <p class="mb-6">Savor the Flavor, Relive the Moments - A Feast for Your Eyes.</p>
+        </div>
+      </div>
+      <div class="row gx-3" data-isotope>
+        <!-- Gallery Thumbnails -->
+        <div class="col-6 col-sm-6 col-md-4">
+          <a href="assets/img/gallery/1.jpg" class="glightbox" data-gallery="gallery1">
+            <img src="assets/img/gallery/1.jpg" class="img-fluid mb-3" alt="Image 1">
+          </a>
+        </div>
+        <div class="col-6 col-sm-6 col-md-4">
+          <a href="assets/img/gallery/2.jpg" class="glightbox" data-gallery="gallery1">
+            <img src="assets/img/gallery/2.jpg" class="img-fluid mb-3" alt="Image 2">
+          </a>
+        </div>
+        <div class="col-6 col-sm-6 col-md-4">
+          <a href="assets/img/gallery/8.jpg" class="glightbox" data-gallery="gallery1">
+            <img src="assets/img/gallery/8.jpg" class="img-fluid mb-3" alt="Image 3">
+          </a>
+        </div>
+        <div class="col-6 col-sm-6 col-md-4">
+          <a href="assets/img/paneertikka.jpg" class="glightbox" data-gallery="gallery1">
+            <img src="assets/img/paneertikka.jpg" class="img-fluid mb-3" alt="Image 4">
+          </a>
+        </div>
+        <div class="col-6 col-sm-6 col-md-4">
+          <a href="assets/img/kulfi.jpg" class="glightbox" data-gallery="gallery1">
+            <img src="assets/img/kulfi.jpg" class="img-fluid mb-3" alt="Image 5">
+          </a>
+        </div>
+        <div class="col-6 col-sm-6 col-md-4">
+          <a href="assets/img/gallery/6.jpg" class="glightbox" data-gallery="gallery1">
+            <img src="assets/img/gallery/6.jpg" class="img-fluid mb-3" alt="Image 6">
+          </a>
+        </div>
+        <div class="col-6 col-sm-6 col-md-4">
+          <a href="assets/img/saag.jpg" class="glightbox" data-gallery="gallery1">
+            <img src="assets/img/saag.jpg" class="img-fluid mb-3" alt="Image 7">
+          </a>
+        </div>
+        <div class="col-6 col-sm-6 col-md-4">
+          <a href="assets/img/rice.jpg" class="glightbox" data-gallery="gallery1">
+            <img src="assets/img/rice.jpg" class="img-fluid mb-3" alt="Image 8">
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- EVENTS + NEWSLETTER (Background Image with Blur & Opacity) -->
+<section class="py-10 text-center text-white position-relative overflow-hidden" style="background: none;">
+  
+  <!-- Background image with blur + opacity -->
+  <div class="position-absolute top-0 start-0 w-100 h-100" 
+       style="background-image: url(assets/img/8.jpg);
+              background-size: cover;
+              background-position: center;
+              filter: blur(2px) brightness(0.2);">
+  </div>
+
+  <!-- Content -->
+  <div class="position-relative">
+    <!-- Event Description -->
+    <!--<p class="mb-4" style="color: white;">Get Update's on special offers</p>-->
+
+    <!-- Event Heading -->
+    <h2 class="mb-5" style="color: goldenrod;">Be in the Know — Get Updates on Upcoming Events, Exclusive Menus, and Dining Experiences Where the Flavor Never Ends!</h2>
+
+    <!-- Newsletter Heading -->
+    <h3 class="mb-3" style="color: greenyellow">Get Access to Exclusive Events</h3>
+    <p class="mb-4" style="color: white;">
+      Join our community to get access to exclusive events, special offers, and exciting updates straight to your inbox!
+    </p>
+
+    <!-- Newsletter Form -->
+    <form id="newsletter-form" class="mb-4 d-inline-flex justify-content-center flex-wrap gap-2">
+      <input class="form-control w-auto" type="email" id="email-input" name="email"
+        placeholder="Enter your email address" required />
+      <button type="submit" class="btn btn-outline-light" style="color: goldenrod;">Join Now</button>
+    </form>
+    <p id="form-warning" style="color: yellow; font-size: 0.9rem; margin-top: 10px;"></p>
+    <p id="form-success" style="color: lightgreen; font-size: 0.9rem; margin-top: 5px;"></p>
+  </div>
+</section>
+
+
+<!-- OTHER LOCATIONS (SEO Optimized & 3D Image Focus) -->
+<section class="py-7 py-md-9 bg-light" id="locations">
+  <div class="container">
+    <!-- Section Heading -->
+    <div class="row justify-content-center mb-5">
+      <div class="col-12 col-md-8 text-center">
+        <h2 class="mb-3">Visit Our Other Locations in Seattle</h2>
+        <p class="text-muted">Experience the same authentic flavors and hospitality at our other restaurants in Seattle.</p>
+      </div>
+    </div>
+
+    <!-- Location Cards -->
+    <div class="row g-4">
+
+      <!-- Location 1: Nirmal Express -->
+      <div class="col-12 col-md-6">
+        <div class="card h-100 shadow-sm border-0 location-card" itemscope itemtype="https://schema.org/Restaurant">
+          <div class="card-img-wrapper overflow-hidden">
+            <img src="assets/img/nirmalexpress.jpg" class="card-img-top" 
+                 alt="Nirmal Express Restaurant, Seattle – Indian Cuisine">
+          </div>
+          <div class="card-body text-center">
+            <h3 class="card-title text-success" itemprop="name">Nirmal Express</h3>
+            <p class="card-text text-muted mb-2" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+              <span itemprop="streetAddress">701 5th Ave. Suite 300</span>, 
+              <span itemprop="addressLocality">Seattle</span>, 
+              <span itemprop="addressRegion">WA</span> 
+              <span itemprop="postalCode">98104</span>
+              <a href="https://www.google.com/maps?q=701+5th+Ave+Suite+300+Seattle+WA+98104" 
+                 target="_blank" rel="noopener noreferrer" 
+                 style="margin-left:5px; color: goldenrod; text-decoration:none;" 
+                 title="View on Map">📍</a>
+            </p>
+            <p class="card-text mb-3">
+              Phone: <a href="tel:+12066839701" itemprop="telephone">+1 (206) 683-9701</a>
+            </p>
+
+            <div class="d-grid gap-2">
+              <a href="https://order.toasttab.com/online/nirmals-express-701-5th-avenue" 
+                 target="_blank" rel="noopener noreferrer" 
+                 class="btn btn-order-online">Order Online</a>
+
+              <a href="assets/img/NIRMAL_EXPRESS_2025.pdf" 
+                 target="_blank" rel="noopener noreferrer" 
+                 class="btn btn-outline-success">
+                 <i class="fas fa-file-pdf me-2"></i> View Menu
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Location 2: Henjoy -->
+      <div class="col-12 col-md-6">
+        <div class="card h-100 shadow-sm border-0 location-card" itemscope itemtype="https://schema.org/Restaurant">
+          <div class="card-img-wrapper overflow-hidden">
+            <img src="assets/img/henjoy.jpg" class="card-img-top" 
+                 alt="Henjoy Restaurant, Seattle – Indian Cuisine">
+          </div>
+          <div class="card-body text-center">
+            <h3 class="card-title text-success" itemprop="name">Henjoy</h3>
+            <p class="card-text text-muted mb-2" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+              <span itemprop="streetAddress">701 5th Ave. Suite 100</span>, 
+              <span itemprop="addressLocality">Seattle</span>, 
+              <span itemprop="addressRegion">WA</span> 
+              <span itemprop="postalCode">98104</span>
+              <a href="https://www.google.com/maps?q=701+5th+Ave+Suite+100+Seattle+WA+98104" 
+                 target="_blank" rel="noopener noreferrer" 
+                 style="margin-left:5px; color: goldenrod; text-decoration:none;" 
+                 title="View on Map">📍</a>
+            </p>
+            <p class="card-text mb-3">
+              Phone: <a href="tel:+12066839701" itemprop="telephone">+1 (206) 683-9701</a>
+            </p>
+
+            <div class="d-grid gap-2">
+              <a href="https://order.toasttab.com/online/classic-hen-701-5th-avenue" 
+                 target="_blank" rel="noopener noreferrer" 
+                 class="btn btn-order-online">Order Online</a>
+
+              <a href="assets/img/Henjyoy_2025.pdf" 
+                 target="_blank" rel="noopener noreferrer" 
+                 class="btn btn-outline-success">
+                 <i class="fas fa-file-pdf me-2"></i> View Menu
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- MAP -->
+  <section class="bg-light" data-map='{"center": [47.601568445924066, -122.33267251559042], "zoom": 12}'
+    style="height: 30rem"></section>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const lightbox = GLightbox({ selector: '.glightbox' });
+    });
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const button = document.getElementById("book-table-btn");
+      const cateringButton = document.getElementById("catering-btn");
+      const cateringSection = document.querySelector(".slider");
+      let lastScrollY = 0;
+
+      window.addEventListener("scroll", () => {
+        const currentScrollY = window.scrollY;
+
+        lastScrollY = currentScrollY;
+
+        if (cateringSection) {
+          const rect = cateringSection.getBoundingClientRect();
+          if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+            button.style.display = "none";
+            cateringButton.style.display = "block";
+          } else {
+            cateringButton.style.display = "none";
+            button.style.display = currentScrollY > lastScrollY ? "block" : "block";
+
+            if (currentScrollY === 0) {
+              button.style.display = "none";
+              button.classList.remove("book-table-btn");
+            }
+          }
+        }
+      });
+    });
+  </script>
+
+  <!-- Subscription JS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.getElementById('newsletter-form');
+      const emailInput = document.getElementById('email-input');
+      const warning = document.getElementById('form-warning');
+      const success = document.getElementById('form-success');
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const email = emailInput.value.trim();
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        // Clear previous messages
+        warning.textContent = "";
+        success.textContent = "";
+
+        // Validate email
+        if (email === "") {
+          warning.textContent = "⚠️ Please fill in your email address.";
+          emailInput.focus();
+          return;
+        }
+
+        if (!emailRegex.test(email)) {
+          warning.textContent = "⚠️ Please enter a valid email address.";
+          emailInput.focus();
+          return;
+        }
+
+        // Send to Formspree (replace with your actual Formspree form ID)
+        fetch("https://formspree.io/f/mvgrnkwz", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ email: email })
+        })
+          .then(response => {
+            if (response.ok) {
+              success.textContent = "✅ Thank you! You've been subscribed.";
+              emailInput.value = "";
+            } else {
+              warning.textContent = "❌ Failed to send. Please try again.";
+            }
+          })
+          .catch(error => {
+            console.error("Formspree error:", error);
+            warning.textContent = "❌ An error occurred. Please try again.";
+          });
+      });
+    });
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <script>
+    const lightbox = GLightbox({
+      selector: '.glightbox'
+    });
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('menuContainer');
+      const tabs = document.querySelectorAll('#menuTabs button.nav-link');
+
+      const bgMap = {
+        lunchTab: "assets/img/mthali.jpg",
+        dinnerTab: "assets/img/crabmasala.jpg",
+        dessertTab: "assets/img/jalebi.jpg",
+        drinksTab: "assets/img/F-wine-02.jpeg"
+      };
+
+      // Set initial background for active tab
+      const activeTab = document.querySelector('#menuTabs button.nav-link.active');
+      if (activeTab && bgMap[activeTab.id]) {
+        container.style.backgroundImage = `url('${bgMap[activeTab.id]}')`;
+      }
+
+      tabs.forEach(tab => {
+        tab.addEventListener('shown.bs.tab', (e) => {
+          const bgUrl = bgMap[e.target.id];
+          if (bgUrl) {
+            container.style.backgroundImage = `url('${bgUrl}')`;
+          }
+        });
+      });
+    });
+
+  </script>
+
+
+  <!-- FOOTER -->
+  {{> partials/footer}}
+
+  <!-- TOAST -->
+  {{> partials/toast}}
+
+  <!-- JAVASCRIPT -->
+  {{> partials/scripts}}
+
+</body>
+
+</html>

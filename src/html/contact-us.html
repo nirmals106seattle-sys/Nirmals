@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {{> partials/head title="Nirmals Restaurant"}}
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bigpicture/dist/bigpicture.min.js"></script>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    .bg-light {
+      background-color: #f8f9fa;
+    }
+
+    .gallery img {
+      cursor: pointer;
+      border-radius: 8px;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  {{> partials/navbar variant="dark" toggle="true" page="contact-us.html"}}
+
+  <!-- HEADER -->
+  <header data-jarallax data-speed=".8" style="background-image: url(assets/img/37.jpg)">
+    <div class="pt-10 pb-8 pt-md-15 pb-md-13 bg-black bg-opacity-50">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-8 col-lg-6 text-center">
+            <h1 class="display-6 fw-bold text-white">Contact Us</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Social Icons -->
+  <div class="social-icons-sticky-bottom ">
+    <a href="tel:+12066839701" aria-label="Call"><i class="fas fa-phone"></i></a>
+    <a href="https://x.com/NirmalsSeattle" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+    <a href="https://www.facebook.com/nirmalseattle" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com/nirmalsseattle/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.google.com/maps?q=106+Occidental+Ave+S,+Seattle,+WA+98104" target="_blank" aria-label="Location"><i class="fas fa-map-marker-alt"></i></a>
+  </div>
+
+  <!-- CONTACT -->
+  <section class="py-7 py-md-9">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6 text-center">
+          <h2 class="mb-2">Get in touch with us</h2>
+          <p class="mb-6">We are happy to connect</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3 order-md-2">
+          <h4 class="mb-2 text-xs">Write us</h4>
+          <p class="mb-4 font-serif"><a href="mailto:info@nirmalseattle.com">info@nirmalseattle.com</a></p>
+
+          <h4 class="mb-2 text-xs">Call us</h4>
+          <p class="mb-4 font-serif"><a href="tel:+12066839701">+1 206-683-9701</a></p>
+
+          <h4 class="mb-2 text-xs">Visit us</h4>
+          <p class="mb-4 font-serif">
+            Interurban Building<br>
+            106 Occidental Ave S<br>
+            Seattle, WA USA 98104
+          </p>
+
+          <h4 class="mb-2 text-xs">Social links</h4>
+          <div class="d-flex mb-6 mb-md-0 font-serif">
+            <a class="d-block me-3" href="https://x.com/i/flow/login?redirect_after_login=%2Fnirmalsseattle"><i class="fab fa-twitter"></i></a>
+            <a class="d-block me-3" href="https://www.facebook.com/nirmalseattle"><i class="fab fa-facebook-f"></i></a>
+            <a class="d-block" href="https://www.instagram.com/nirmalsseattle/"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="col-md-9 order-md-1">
+          <form id="enquiry-form">
+            <div class="mb-3">
+              <input class="form-control" id="name" name="name" type="text" placeholder="Full name" required />
+            </div>
+            <div class="mb-3">
+              <input class="form-control" id="email" name="email" type="email" placeholder="E-mail address" required />
+            </div>
+            <div class="mb-3">
+              <textarea class="form-control" id="message" name="message" rows="9" placeholder="Message" required></textarea>
+            </div>
+            <button class="btn btn-outline-primary" type="submit">Send message</button>
+            <p id="form-feedback" style="margin-top: 10px; font-size: 0.9rem;"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP -->
+  <section class="bg-light" data-map='{"center": [47.601568445924066, -122.33267251559042], "zoom": 12}' style="height: 30rem"></section>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <!-- Book A Table button -->
+  <a href="https://www.yelp.com/reservations/nirmals-seattle" target="_blank" class="btn text-white text-dark-hover" id="book-table-btn" style="display: none;">Book A Table</a>
+
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+  // Book A Table button logic
+  const bookButton = document.getElementById("book-table-btn");
+
+  window.addEventListener("scroll", () => {
+    const scrollY = window.scrollY;
+    if (bookButton) {
+      bookButton.style.display = scrollY > 200 ? "block" : "none";
+    }
+  });
+
+  // Contact form submission
+  const form = document.getElementById('enquiry-form');
+  const feedback = document.getElementById('form-feedback');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    if (!name || !email || !message) {
+      feedback.textContent = "⚠️ Please fill all fields.";
+      feedback.style.color = "red";
+      return;
+    }
+
+    try {
+      const res = await fetch('/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, message })
+      });
+
+      const data = await res.json();
+      feedback.textContent = data.message;
+      feedback.style.color = data.success ? "green" : "red";
+      if (data.success) form.reset();
+
+    } catch (err) {
+      feedback.textContent = "❌ Error sending message.";
+      feedback.style.color = "red";
+    }
+  });
+});
+</script>
+
+
+  <!-- FOOTER -->
+  {{> partials/footer}}
+  {{> partials/toast}}
+  {{> partials/scripts}}
+</body>
+</html>

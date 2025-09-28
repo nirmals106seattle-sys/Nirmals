@@ -1,0 +1,749 @@
+// 
+// user.scss
+// Use this to write your custom SCSS
+//
+
+
+
+.text-body-emphasis p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.custom-height {
+  height: 150px;
+  font-size: 16px;
+  resize: vertical;
+}
+
+.sticky-menu {
+  position: fixed;
+  left: 0;
+  bottom: -5%;
+  z-index: 1000;
+  width: 100%;
+  transition: top 0.3s;
+  background-color: #344E41;
+  padding: 30px 0;
+  text-align: center;
+  color: gold;
+  text-decoration: none;
+  /* Optional: removes underline */
+}
+
+.menu-color .nav-link.active {
+  color: white !important;
+}
+
+
+.sticky-menu a {
+  color: goldenrod;
+  text-decoration: none;
+  /* Optional: removes underline */
+}
+
+.hidden {
+  bottom: 0;
+}
+
+.menuhighlight {
+  background-color: #344E41;
+  padding: 30px 0;
+  text-align: center;
+
+}
+
+.menu-text-size {
+  font-size: 15px;
+}
+
+.submenu-text-size {
+  font-size: 13px;
+}
+
+element.style {
+  background-image: url(assets/img/chardonnay.jpg);
+}
+
+.bgi-size-cover {
+  background-size: cover;
+}
+
+.bgi-position-center {
+  background-position: center;
+}
+
+.bgi-no-repeat {
+  background-repeat: no-repeat;
+}
+
+.card-rounded {
+  border-radius: .95rem;
+}
+
+.min-h-325px {
+  min-height: 450px !important;
+}
+
+.bg-light {
+  background-color: #f8f9fa;
+}
+
+.gallery img {
+  cursor: pointer;
+  border-radius: 8px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+.subline {
+  color: goldenrod;
+  text-decoration: none;
+}
+
+.subtext {
+  color: #e9b138;
+  text-decoration: none;
+}
+
+p {
+  color: var(--bs-emphasis-color);
+}
+.book-table-wrapper {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+#book-table-btn {
+  position: fixed;
+  right: 20px;
+  bottom: 380px; /* Adjust this value to place it just above socials */
+  background-color: goldenrod;
+  color: rgb(17, 15, 15);
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  z-index: 999;
+  overflow: hidden;
+  display: inline-block;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s ease;
+}
+
+
+/* Shine effect */
+#book-table-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  transform: skewX(-20deg);
+  transition: left 0.4s ease;
+}
+
+/* Shine animation */
+#book-table-btn:hover::before {
+  animation: shine 0.8s forwards;
+}
+
+/* Glow & highlight */
+#book-table-btn:hover {
+  background-color: #ffc400;
+  box-shadow: 0 0 15px 5px rgba(255, 215, 0, 0.6);
+  
+}
+
+@keyframes shine {
+  0% {
+    left: -75%;
+  }
+  100% {
+    left: 125%;
+  }
+}
+
+
+.slider {
+  position: relative;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.overlay-image {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  pointer-events: none;
+  max-width: 100%;
+  height: auto;
+}
+
+.text-container {
+  position: relative;
+  z-index: 2;
+  color: black;
+}
+
+.text-container .btn {
+  z-index: 3;
+  position: relative;
+}
+
+.bottom-left-btn {
+  position: absolute;
+  bottom: -650px;
+  left: 20px;
+  z-index: 3;
+  padding: 10px 20px;
+}
+
+//catering 
+
+
+
+[class*=" ci-"]:before,
+[class^=ci-]:before {
+  font-family: cartzilla-icons !important;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400 !important;
+  line-height: 1;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale
+}
+
+.icon-container {
+  position: relative;
+  display: inline-block;
+  width: 2em;
+  /* Adjust size as needed */
+  height: 2em;
+  /* Adjust size as needed */
+  overflow: hidden;
+  /* Ensures image stays within the bounds */
+}
+
+.icon-image {
+  width: 120%;
+  height: 120%;
+  object-fit: contain;
+  /* Adjusts the image to fit within the container while preserving its aspect ratio */
+  display: block;
+}
+
+.d-flex.align-items-center {
+  column-gap: 1.5rem;
+  /* Adjust spacing as needed */
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  /* Ensures image covers the entire div */
+  background-position: center;
+  /* Centers the image within the div */
+  background-repeat: no-repeat;
+  /* Prevents repeating the image */
+}
+
+.card img {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+  /* Ensures the image fills the div while preserving aspect ratio */
+}
+
+
+.bg-opacity-15 {
+  --bs-bg-opacity: 0.15;
+}
+
+.bg-pink {
+  background-color: pink !important;
+}
+.catering-banner {
+  padding: 40px 0;
+  background-color: #f9f9f9; /* Optional: gives contrast */
+  text-align: center;
+  
+}
+
+.catering-banner .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.catering-img {
+  width: 100%;
+  height: auto;
+  
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Optional: depth */
+}
+
+
+
+
+
+
+.social-icons-sticky-bottom {
+  position: fixed;
+  bottom: 60px;
+  color: #344E41;
+  /* distance from bottom */
+  right: 20px;
+  /* distance from right */
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 8px;
+  background: transparent;
+}
+
+.social-icons-sticky-bottom a {
+  background-color: #ffffff;
+  color: #344E41;
+  font-size: 1.5rem;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.18);
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-icons-sticky-bottom a:hover {
+  background-color: #ff9900;
+  color: #fff;
+  box-shadow: 0 6px 14px rgba(255, 153, 0, 0.6);
+}
+
+
+.social-icons-sticky-bottom {
+  background-color: transparent !important;
+  color: inherit !important;
+}
+
+
+.sticky-bg-section {
+  position: relative;
+  height: 60vh;
+  /* height of section */
+  overflow: hidden;
+}
+
+
+/* Content container styling */
+.content-container {
+  position: relative;
+  max-width: 800px;
+  /* or your preferred width */
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  color: white;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.4);
+  /* translucent background for readability */
+  border-radius: 8px;
+  top: 50%;
+  transform: translateY(50%);
+}
+
+.content-container h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+}
+
+.content-container p {
+  font-size: 1.2rem;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+}
+
+/* Cocktail slider section styles */
+
+.cocktail-slider-section {
+  padding: 60px 20px;
+  background-color: #212529;
+  color: white;
+  overflow-x: hidden;
+  border-top: 2px solid #343a40;
+  border-bottom: 2px solid #343a40;
+}
+
+/* Cocktail Gallery Layout */
+.cocktail-gallery {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  padding: 1rem 1rem 10px;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.cocktail-gallery::-webkit-scrollbar {
+  display: none;
+}
+
+/* Cocktail Card Container */
+.cocktail-card {
+  flex: 0 0 auto;
+  width: 200px;
+  height: 300px;
+  perspective: 1000px;
+  scroll-snap-align: start;
+  border: none;
+  background: none;
+}
+
+/* Flip Inner Card */
+.flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.cocktail-card:hover .flip-inner,
+.cocktail-card .flip-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+/* Front & Back Sides */
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+/* Front Side Styling */
+.card-front {
+  background-color: #212529;
+}
+
+.card-front img {
+  width: 110%;
+  height: 110%;
+  object-fit: cover;
+  border-radius: 12px 12px 12px 12px;
+}
+
+/* Back Side Styling */
+.card-back {
+  background-color: #344E41;
+  color: white !important; /* forces text inside to be white */
+  transform: rotateY(180deg);
+  flex-direction: column;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.3;
+  padding: 20px;
+  text-align: center;
+}
+
+.card-back *, .card-back p, .card-back h5, .card-back span {
+  color: white !important;
+}
+
+.card-back .cocktail-title {
+  color: #ffcc00 !important;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+
+/* Text inside Back */
+.card-back p {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 480px) {
+  .cocktail-card {
+    width: 150px;
+    height: 220px;
+  
+    .flip-inner {
+    cursor: default;
+  }
+}
+
+
+  .card-back p {
+    font-size: 0.8rem;
+  }
+
+  .cocktail-gallery {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+/* Tabs styling */
+.menu-section #menuTabs .nav-link {
+  font-size: 1.1rem; /* reduced from 1.3rem */
+  font-weight: 600;
+  padding: 0.55rem 1.0rem;
+  text-transform: uppercase;
+  transition: font-size 0.3s ease;
+}
+.menu-section #menuTabs .nav-link.active {
+  font-size: 1.3rem; /* reduced from 1.4rem */
+  font-weight: 700;
+}
+
+/* Section heading & text */
+.menu-section .menu-header h2 {
+  font-size: 2rem; /* reduced from 2.2rem */
+  font-weight: 700;
+}
+.menu-section .menu-header .lead {
+  font-size: 1.1rem; /* reduced from 1.2rem */
+}
+
+/* All text in cards white */
+.menu-section .content-card,
+.menu-section .content-card h3,
+.menu-section .content-card p,
+.menu-section .content-card a {
+  color: #fff !important;
+}
+
+.menu-section .content-card h3 {
+  font-size: 1.6rem; /* slightly smaller */
+}
+
+.menu-section .content-card p {
+  font-size: 1rem; /* slightly smaller */
+}
+
+/* Card title & text */
+.menu-section .content-card h3 {
+  font-size: 1.6rem;
+  margin-bottom: 0.8rem;
+}
+.menu-section .content-card p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Buttons */
+.menu-section .btn-green {
+  font-size: 1rem;
+  padding: 0.6rem 1.2rem;
+  color: #fff;
+  background-color: #344e41;
+  border-color: #344e41;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+
+/* Black overlay for readability */
+.menu-section #menuContainer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgba(0,0,0,0.5);
+  transition: background 0.3s ease;
+}
+
+/* Container */
+.menu-section #menuContainer {
+  position: relative;
+  padding: 0;
+  background-size: cover;
+  background-position: center;
+  border-radius: 1rem;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-image 0.8s ease-in-out;
+  z-index: 0;
+}
+
+/* Content cards */
+.menu-section .content-card {
+  position: relative;
+  max-width: 600px;
+  width: 90%;
+  padding: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+  z-index: 2;
+}
+
+/* Tab panes */
+.menu-section .tab-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.menu-section .tab-pane {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.menu-section .tab-pane.fade { display: none; }
+.menu-section .tab-pane.fade.show.active { display: flex !important; }
+
+
+/* Content card heading & description - slightly bigger */
+.menu-section .content-card h3 {
+  font-size: 1.8rem; /* increased from 1.6rem */
+  margin-bottom: 1rem;
+}
+
+.menu-section .content-card p {
+  font-size: 1.1rem; /* increased from 1rem */
+  line-height: 1.6;
+}
+
+/* Optional: slightly bigger button text */
+.menu-section .btn-green {
+  font-size: 1rem; /* increased from 1rem */
+  padding: 0.7rem 1.4rem;
+  border-radius: .5rem;
+}
+
+.image-container {
+  position: relative;
+  height: 550px;              /* 👈 adjust this to your desired height */
+   max-width: 1400px;                /* width will adjust based on content */
+  background-size: cover;
+  background-position: center;
+  border-radius: 0.5rem;
+  
+  display: flex;              /* centers the content */
+  align-items: center;        /* vertical center */
+  justify-content: center;    /* horizontal center */
+}
+
+
+
+/* Career Page Styles */
+.hero {
+  background: url('assets/img/restaurant-career-bg.jpg') center/cover no-repeat;
+  color: rgb(90, 22, 22);
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.job-card {
+  box-shadow: 0 4px 6px rgba(72, 7, 7, 0.1);
+  transition: transform 0.2s;
+}
+
+.job-card:hover {
+  transform: translateY(-5px);
+}
+
+.btn-apply {
+  margin-top: 10px;
+  background-color: #344E41;
+}
+
+.btn-explore:hover {
+  background-color: #6b280d;
+}
+
+.benefits img {
+  width: 60px;
+  margin-bottom: 15px;
+}
+
+.bg-light {
+  background-color: #d5e1ec;
+}
+
+.gallery img {
+  cursor: pointer;
+  border-radius: 8px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+
+//apply.html
+.career-header {
+  background: url('assets/img/36.jpg') center/cover no-repeat;
+  color: #fff;
+  padding-top: 140px; // adjust according to navbar height
+  padding-bottom: 80px;
+  position: relative;
+  z-index: 1; 
+  text-align: center;
+
+  .career-title {
+    font-size: 2.5rem; // adjust size as needed
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .career-subtitle {
+    font-size: 1.25rem;
+    font-weight: 400;
+    max-width: 700px; // optional for long text
+    margin: 0 auto;
+  }
+}

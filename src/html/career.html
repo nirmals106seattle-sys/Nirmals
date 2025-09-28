@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {{> partials/head title="Nirmal's Restaurant"}}
+
+     <!-- Include GLightbox CSS (if you plan to have a gallery on the career page as well) -->
+     
+    <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bigpicture/dist/bigpicture.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+   <link rel="stylesheet" href="assets/css/user.css">
+
+    
+  
+   <style>
+     
+
+    </style>
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    {{> partials/navbar variant="dark" toggle="true" page="career.html"}}
+
+        <!-- HEADER -->
+      <!--  <header data-jarallax data-speed=".8" style="background-image: url(assets/img/c4.png)">-->
+            <div class="pt-10 pb-8 pt-md-15 pb-md-13 bg-black bg-opacity-50">
+              <div class="container">
+                <div class="row justify-content-center">
+                  <div class="col-12 col-md-8 col-lg-6 text-center">
+                    <!-- Heading -->
+
+                        <!-- HERO SECTION -->
+
+                         <section class="hero">
+      <h1 class="display-4">Join the Nirmal's Family</h1>
+      <p class="lead">We're always looking for passionate individuals who share our love for food and hospitality.</p>
+      <a href="#open-positions" class="btn btn-primary btn-lg mt-3">Explore Opportunities</a>
+    
+              </div>
+                </div>
+              </div>
+            </div>
+          </header>
+
+
+               <!-- Social Icons -->
+    <!-- Sticky social icons near right bottom -->
+    <div class="social-icons-sticky-bottom ">
+
+      <a href="tel:+12066839701" aria-label="Call">
+        <i class="fas fa-phone"></i></a>
+
+      <a href="https://x.com/NirmalsSeattle" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+
+      <a href="https://www.facebook.com/nirmalseattle" target="_blank" aria-label="Facebook"><i
+          class="fab fa-facebook-f"></i></a>
+
+      <a href="https://www.instagram.com/nirmalsseattle/" target="_blank" aria-label="Instagram"><i
+          class="fab fa-instagram"></i></a>
+
+      <a href="https://www.google.com/maps?q=106+Occidental+Ave+S,+Seattle,+WA+98104" target="_blank"
+        aria-label="Location"><i class="fas fa-map-marker-alt"></i></a>
+
+
+
+    </div>
+
+      <!--     <section>-->
+
+    <!-- ABOUT US SECTION -->
+    <section class="py-5">
+      <div class="container">
+        <div class="section-title">
+          <h2>Why Work With Us?</h2>
+          <p>At Nirmal's, we value our team as much as our guests. Join us and enjoy a rewarding career in a vibrant, dynamic environment.</p>
+        </div>
+        <div class="row text-center benefits">
+          <div class="col-md-4">
+            <img src="assets/img/c1.png" alt="Training">
+            <h5>Comprehensive Training</h5>
+            <p>Learn from seasoned chefs and hospitality experts.</p>
+          </div>
+          <div class="col-md-4">
+            <img src="assets/img/c2.png" alt="Flexible">
+            <h5>Flexible Schedules</h5>
+            <p>We accommodate your lifestyle with shifts that fit your needs.</p>
+          </div>
+          <div class="col-md-4">
+            <img src="assets/img/c3.png" alt="Perks">
+            <h5>Team Perks</h5>
+            <p>Enjoy free meals, discounts, and more as part of our team.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OPEN POSITIONS SECTION -->
+    <section id="open-positions" class="py-5 bg-light">
+      <div class="container">
+        <div class="section-title">
+          <h2>Open Positions</h2>
+          <p>We're hiring for several exciting roles. Take a look at the opportunities to join our family.</p>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card job-card p-3">
+              <h5>Line Cook</h5>
+      
+              <p>Prepare dishes to perfection under the guidance of our head chef.</p>
+              <a href="apply.html" class="btn btn-primary btn-apply">Apply Now</a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card job-card p-3">
+              <h5>Server</h5>
+              
+              <p>Create exceptional dining experiences for our guests with great service.</p>
+              <a href="apply.html" class="btn btn-primary btn-apply">Apply Now</a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card job-card p-3">
+              <h5>Dishwasher</h5>
+              
+              <p>Ensure the kitchen runs smoothly by keeping it clean and organized.</p>
+              <a href="apply.html" class="btn btn-primary btn-apply">Apply Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT US SECTION -->
+    <section class="py-7 py-md-9 bg-light">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-8 col-lg-6 text-center">
+            <!-- Heading -->
+            <h2 class="mb-2">Get in Touch</h2>
+            <!-- Subheading -->
+            <p class="mb-6">Have questions? Feel free to reach out to us, and we'll be happy to assist you!</p>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-6">
+            <!-- Contact Form -->
+            <form action="mailto:career@nirmalsrestaurant.com" method="POST" enctype="multipart/form-data">
+              <div class="row gx-3">
+                <div class="col-md-6">
+                  <label for="name" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="name" name="name" required />
+                </div>
+                <div class="col-md-6">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="email" name="email" required />
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- Book A Table button -->
+<a href="https://www.yelp.com/reservations/nirmals-seattle" target="_blank" class="btn text-white text-dark-hover" id="book-table-btn" style="display: none;">
+  Book A Table
+</a>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const button = document.getElementById("book-table-btn"); 
+    const cateringButton = document.getElementById("catering-btn");
+    const cateringSection = document.querySelector(".slider");
+    let lastScrollY = 0;
+
+    window.addEventListener("scroll", () => {
+      const currentScrollY = window.scrollY;
+
+      // Check if catering elements exist
+      if (cateringButton && cateringSection) {
+        const rect = cateringSection.getBoundingClientRect();
+
+        if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+          // Slider section is in view
+          button.style.display = "none";  // Hide Book A Table button
+          cateringButton.style.display = "block";  // Show Catering button
+        } else {
+          cateringButton.style.display = "none";
+
+          // Show Book A Table button only if scrolled down beyond 200px (example)
+          if (currentScrollY > 200) {
+            button.style.display = "block";
+          } else {
+            button.style.display = "none";
+          }
+        }
+      } else {
+        // If catering elements missing, just show Book A Table button when scrolled down
+        if (currentScrollY > 200) {
+          button.style.display = "block";
+        } else {
+          button.style.display = "none";
+        }
+      }
+
+      // Update lastScrollY after logic so direction check works next time
+      lastScrollY = currentScrollY;
+    });
+  });
+</script>
+
+
+
+
+    <!-- FOOTER -->
+    {{> partials/footer}}
+
+    <!-- TOAST -->
+    {{> partials/toast}}
+
+    <!-- JAVASCRIPT -->
+    {{> partials/scripts}}
+
+    <!-- Include Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {{> partials/head title="Nirmals Restaurant"}}
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+  <!-- AOS CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <style>
+    .bg-light {
+      background-color: #f8f9fa;
+    }
+
+    .gallery img {
+      cursor: pointer;
+      border-radius: 8px;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .parallax-owner-section {
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/img/owner1.png');
+      background-size: cover;
+      background-position: top center;
+      background-repeat: no-repeat;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      color: white;
+      position: relative;
+    }
+
+    .bg-overlay {
+      background-color: rgba(0.6, 0.6, 0, 0.6);
+    }
+
+    .parallax-overlay {
+      background-color: rgba(240, 237, 237, 0.5);
+      padding: 2rem;
+      border-radius: 10px;
+      max-width: 700px;
+      width: 90%;
+    }
+
+    .parallax-overlay h4 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .equal-image {
+      height: 400px;
+      object-fit: contain;
+    }
+
+    /* Accordion Styling */
+    .accordion-button {
+      font-weight: 600;
+      font-size: 1.25rem;
+      color: #344E41;
+    }
+
+    .accordion-body {
+      font-size: 1rem;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .transition-icon {
+  transition: transform 0.3s ease-in-out;
+}
+
+button[aria-expanded="true"] .transition-icon {
+  transform: rotate(180deg);
+}
+
+    @media (max-width: 768px) {
+      .bg-img {
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+      }
+        .parallax-owner-section {
+        height: auto;
+        padding: 3rem 1rem;
+        background-attachment: fixed;
+      }
+
+      .bg-overlay {
+        padding: 2rem 1.5rem;
+      }
+    }
+
+    .object-contain {
+      object-fit: contain;
+      object-position: center;
+    }
+
+   
+    .media-decoration-img {
+      max-height: 350px;
+      object-fit: cover;
+    }
+
+    @media (max-width: 767px) {
+      .media-decoration-border {
+        display: none;
+      }
+    }
+
+    header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4); /* dark overlay */
+  z-index: 1;
+}
+header .container {
+  position: relative;
+  z-index: 2;
+}
+
+.brighten-img {
+  filter: brightness(1.15) contrast(1.1) drop-shadow(0 0 2px rgba(0,0,0,0.1));
+  transition: filter 0.3s ease-in-out;
+}
+
+.chef-toggle .btn {
+  background-color: #344E41;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+.chef-toggle .btn:hover {
+  background-color: #466655;
+}
+
+
+  </style>
+  <meta name="description"
+    content="Discover Nirmals Restaurant in Seattle, serving modern Indian cuisine with a rich 5000-year history of flavors. Learn about our journey and chefs." />
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  {{> partials/navbar variant="dark" toggle="true" page="about-us.html"}}
+
+  <!-- HEADER -->
+  <header data-jarallax data-speed="1.1" style="background-image: url(assets/img/15.jpg)">
+    <div class="pt-10 pb-8 pt-md-15 pb-md-13 bg-black bg-opacity-50">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-8 col-lg-6 text-center">
+            <h1 class="display-6 fw-bold text-white">About Us</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Social Icons -->
+  <div class="social-icons-sticky-bottom">
+    <a href="tel:+12066839701" aria-label="Call"><i class="fas fa-phone"></i></a>
+    <a href="https://x.com/NirmalsSeattle" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+    <a href="https://www.facebook.com/nirmalseattle" target="_blank" aria-label="Facebook"><i
+        class="fab fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com/nirmalsseattle/" target="_blank" aria-label="Instagram"><i
+        class="fab fa-instagram"></i></a>
+    <a href="https://www.google.com/maps?q=106+Occidental+Ave+S,+Seattle,+WA+98104" target="_blank"
+      aria-label="Location"><i class="fas fa-map-marker-alt"></i></a>
+  </div>
+
+  <!-- DISCOVER -->
+<section class="py-7 py-md-9" data-aos="fade-up">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+          <hr class="hr-sm text-primary" />
+          <p class="fs-lg lh-lg text-body-emphasis mb-5 mb-md-0">Explore the burst of flavors of Indian Cuisine</p>
+        </div>
+        <div class="col-md-4">
+          <div class="media-decoration media-decoration-1 mb-5 mb-md-0">
+            <div class="media-decoration-border" data-jarallax-element="-40"></div>
+            <img class="media-decoration-img img-fluid" src="assets/img/owner.jpg" alt="..." />
+          </div>
+        </div>
+
+        <!-- Content Column -->
+        <div class="col-md-6 align-self-center">
+          <h2 class="mb-4">Our <em>Journey</em></h2>
+
+          <p>
+            Modern Indian cuisine has evolved over 5,000 years, influenced by the diverse cultures, regions, and colonial history of the country.
+          </p>
+
+          <p>
+            Nirmal’s is the realization of a lifelong dream for owners Oliver and Gita Bangera — a vision to highlight the true diversity of Indian cuisine beyond the familiar.
+          </p>
+
+          <p>
+            Our menu showcases authentic preparations inspired by India’s rich culinary regions, offering guests a unique experience of dishes rarely seen in other Indian restaurants.
+          </p>
+
+          <p>
+            Located in Seattle's historic Interurban Building, Nirmal's mirrors the spirit of tradition and modern flair. Executive Chef Ashish Bagul brings together local Pacific Northwest ingredients with spices and recipes from across India.
+          </p>
+
+          <p>
+            Expect a dining experience that is both comfortingly familiar and deliciously unexpected — Indian Cuisine, Re-imagined!
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Owner History Section -->
+  <section class="py-7 bg-dark text-white" data-aos="fade-up">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 text-start">
+          <h2 class="display-5 fw-bold" style="color: white;">Meet the Visionaries</h2>
+          <p class="lead" style="color: white;">
+            Nirmal’s was born from the dream of Oliver and Gita Bangera to redefine Indian cuisine in the U.S.
+            Their journey reflects a deep passion for authenticity, innovation, and excellence in hospitality.
+          </p>
+
+        </div>
+        <div class="col-md-6">
+          <img src="assets/img/owner1.png" class="img-fluid rounded shadow w-100" alt="Founders" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE -->
+  <section class="py-7 py-md-9" style="background-color: #344E41;" data-aos="fade-up">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 text-center">
+          <span class="display-1 font-serif text-primary" style="color: white;">”</span>
+          <figure class="mb-0">
+            <blockquote class="blockquote mb-0">
+              <p class="font-serif mb-6" style="color: white;">
+                Staying true to our vision has been recognized by the customers, local and national media through our
+                many accolades.
+                We are grateful, humbled, and deeply moved by these recognitions. <br />
+                We thank everyone from the bottom of our heart for your continued support.
+              </p>
+            </blockquote>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INFO / MEET OUR TEAM -->
+  <section class="py-7 py-md-9" data-aos="fade-up">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6 text-center">
+          <h2 class="mb-2">Meet our Team</h2>
+          <p class="mb-2">The Exceptional Talent in the world of culinary <strong><em>Chef Sunit Sharma</em></strong></p>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-12 text-center">
+          <img class="img-fluid mw-md-110 clip-top-start brighten-img" src="assets/img/Kitchen staff with Sunit.jpg" alt="Chef Sunit Sharma" />
+
+
+          <p class="lead text-body-emphasis">
+            The journey has only begun. We invite you to join and stay with us on this journey as we continue our exploration of the amazing Indian culinary landscape.
+          </p>
+
+          <!-- Accordion for Chef Bio -->
+          <div class="chef-toggle mt-5">
+  <button class="btn btn-outline-dark d-flex align-items-center justify-content-between w-100" 
+          type="button" 
+          data-bs-toggle="collapse" 
+          data-bs-target="#chefBio" 
+          aria-expanded="false" 
+          aria-controls="chefBio">
+    <span class="fw-bold fs-5">About Chef Sunit Sharma</span>
+    <i class="fas fa-chevron-down ms-2 transition-icon"></i>
+  </button>
+
+  <div class="collapse mt-3" id="chefBio">
+    <div class="card card-body shadow-sm">
+      <p><strong>Chef Sunit Sharma</strong> is an internationally recognized chef with over 26 years of experience leading top-tier kitchens across India and abroad.</p>
+
+      <ul class="mb-3">
+        <li>Founder of <strong>Modern Hospitality Consultants</strong> (2018)</li>
+        <li><strong>Certified Executive Chef</strong> by IFCA (2015)</li>
+        <li><strong>Guinness World Record</strong> holder (2017–2019, Goa)</li>
+        <li>Awarded <em>Outstanding Culinary Leader 2023</em>, <em>Star Chef 2019</em></li>
+        <li>Former Executive Chef at Cidade de Goa (Taj Group)</li>
+      </ul>
+
+      <p>He has represented India internationally at culinary events like <strong>Salone del Gusto</strong> in Italy, and featured on shows such as <em>NDTV 24x7's Will Travel for Food</em>.</p>
+
+      <p>Chef Sunit is an advocate for traditional and local cuisines, and actively supports sustainable food movements like <strong>Slow Food</strong> and <strong>Chefs for Peace</strong>.</p>
+
+      <p>He currently serves as <strong>Vice President of the Culinary Forum of Goa</strong>, working to elevate Goan cuisine and unite chefs across the region.</p>
+
+      <p>He holds degrees in Economics and Hotel Management, and continues to inspire future generations through innovation, mentorship, and a deep love for Indian culinary heritage.</p>
+    </div>
+  </div>
+</div>
+
+          <!-- End Accordion -->
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP -->
+  <section class="bg-light" data-map='{"center": [47.601568445924066, -122.33267251559042], "zoom": 12}'
+    style="height: 30rem"></section>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <!-- Book A Table button -->
+  <a href="https://www.yelp.com/reservations/nirmals-seattle" target="_blank" class="btn text-white text-dark-hover"
+    id="book-table-btn" style="display: none;">
+    Book A Table
+  </a>
+
+  <!-- Your scroll JS (unchanged) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const bookButton = document.getElementById("book-table-btn");
+      const ownerButton = document.getElementById("owner-btn");
+      const ownerSection = document.querySelector(".slider");
+      let lastScrollY = window.scrollY;
+
+      window.addEventListener("scroll", () => {
+        const currentScrollY = window.scrollY;
+
+        if (ownerSection && ownerButton && bookButton) {
+          const rect = ownerSection.getBoundingClientRect();
+
+          if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+            bookButton.style.display = "none";
+            ownerButton.style.display = "block";
+          } else {
+            ownerButton.style.display = "none";
+            if (currentScrollY > 200) {
+              bookButton.style.display = "block";
+            } else {
+              bookButton.style.display = "none";
+            }
+
+            if (currentScrollY === 0) {
+              bookButton.style.display = "none";
+              bookButton.classList.remove("book-table-btn");
+            }
+          }
+        } else if (bookButton) {
+          if (currentScrollY > 200) {
+            bookButton.style.display = "block";
+          } else {
+            bookButton.style.display = "none";
+          }
+        }
+
+        lastScrollY = currentScrollY;
+      });
+    });
+  </script>
+
+  <!-- GLightbox, BigPicture, etc. scripts as before -->
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  
+  <!-- Bootstrap JS Bundle - only once, at the bottom -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- AOS JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  </script>
+
+  <!-- FOOTER -->
+  {{> partials/footer}}
+
+  <!-- TOAST -->
+  {{> partials/toast}}
+
+  <!-- JAVASCRIPT -->
+  {{> partials/scripts}}
+</body>
+
+</html>
