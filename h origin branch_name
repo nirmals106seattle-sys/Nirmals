@@ -1,0 +1,138 @@
+[33mcommit 711ba2617c3622f7c18d997e09900c9fb451e976[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: 4160b60b 74766f61
+Author: Shilpa <shilpa@artytechlabs.com>
+Date:   Wed Jan 8 00:00:12 2025 -0800
+
+    4
+
+ dist/about-us.html                                 |   306 [31m-[m
+ dist/contact-us.html                               |   291 [31m-[m
+ dist/gallery.html                                  |   363 [31m-[m
+ dist/index.html                                    |  1544 [31m--[m
+ dist/menu.html                                     |  1044 [31m--[m
+ dist/news-and-events.html                          |   466 [31m-[m
+ dist/reservation.html                              |   299 [31m-[m
+ node_modules/.package-lock.json                    |     6 [32m+[m
+ node_modules/leaflet/CHANGELOG.md                  |  2191 [32m+++[m
+ node_modules/leaflet/LICENSE                       |    26 [32m+[m
+ node_modules/leaflet/README.md                     |    55 [32m+[m
+ node_modules/leaflet/dist/images/layers-2x.png     |   Bin [31m0[m -> [32m1259[m bytes
+ node_modules/leaflet/dist/images/layers.png        |   Bin [31m0[m -> [32m696[m bytes
+ .../leaflet/dist/images/marker-icon-2x.png         |   Bin [31m0[m -> [32m2464[m bytes
+ node_modules/leaflet/dist/images/marker-icon.png   |   Bin [31m0[m -> [32m1466[m bytes
+ node_modules/leaflet/dist/images/marker-shadow.png |   Bin [31m0[m -> [32m618[m bytes
+ node_modules/leaflet/dist/leaflet-src.esm.js       | 14419 [32m++++++++++++++++++[m
+ node_modules/leaflet/dist/leaflet-src.esm.js.map   |     1 [32m+[m
+ node_modules/leaflet/dist/leaflet-src.js           | 14512 [32m+++++++++++++++++++[m
+ node_modules/leaflet/dist/leaflet-src.js.map       |     1 [32m+[m
+ node_modules/leaflet/dist/leaflet.css              |   661 [32m+[m
+ node_modules/leaflet/dist/leaflet.js               |     6 [32m+[m
+ node_modules/leaflet/dist/leaflet.js.map           |     1 [32m+[m
+ node_modules/leaflet/package.json                  |   149 [32m+[m
+ node_modules/leaflet/src/Leaflet.js                |    24 [32m+[m
+ .../leaflet/src/control/Control.Attribution.js     |   148 [32m+[m
+ node_modules/leaflet/src/control/Control.Layers.js |   443 [32m+[m
+ node_modules/leaflet/src/control/Control.Scale.js  |   132 [32m+[m
+ node_modules/leaflet/src/control/Control.Zoom.js   |   146 [32m+[m
+ node_modules/leaflet/src/control/Control.js        |   174 [32m+[m
+ node_modules/leaflet/src/control/index.js          |    17 [32m+[m
+ node_modules/leaflet/src/core/Browser.js           |   220 [32m+[m
+ node_modules/leaflet/src/core/Class.js             |   135 [32m+[m
+ node_modules/leaflet/src/core/Class.leafdoc        |   197 [32m+[m
+ node_modules/leaflet/src/core/Events.js            |   344 [32m+[m
+ node_modules/leaflet/src/core/Events.leafdoc       |   143 [32m+[m
+ node_modules/leaflet/src/core/Handler.js           |    57 [32m+[m
+ node_modules/leaflet/src/core/Util.js              |   241 [32m+[m
+ node_modules/leaflet/src/core/index.js             |    15 [32m+[m
+ node_modules/leaflet/src/dom/DomEvent.DoubleTap.js |    91 [32m+[m
+ node_modules/leaflet/src/dom/DomEvent.Pointer.js   |    97 [32m+[m
+ node_modules/leaflet/src/dom/DomEvent.js           |   315 [32m+[m
+ node_modules/leaflet/src/dom/DomUtil.js            |   349 [32m+[m
+ node_modules/leaflet/src/dom/Draggable.js          |   220 [32m+[m
+ node_modules/leaflet/src/dom/PosAnimation.js       |   113 [32m+[m
+ node_modules/leaflet/src/dom/index.js              |     9 [32m+[m
+ node_modules/leaflet/src/geo/LatLng.js             |   137 [32m+[m
+ node_modules/leaflet/src/geo/LatLngBounds.js       |   251 [32m+[m
+ node_modules/leaflet/src/geo/crs/CRS.EPSG3395.js   |    20 [32m+[m
+ node_modules/leaflet/src/geo/crs/CRS.EPSG3857.js   |    27 [32m+[m
+ node_modules/leaflet/src/geo/crs/CRS.EPSG4326.js   |    23 [32m+[m
+ node_modules/leaflet/src/geo/crs/CRS.Earth.js      |    33 [32m+[m
+ node_modules/leaflet/src/geo/crs/CRS.Simple.js     |    36 [32m+[m
+ node_modules/leaflet/src/geo/crs/CRS.js            |   139 [32m+[m
+ node_modules/leaflet/src/geo/crs/index.js          |    15 [32m+[m
+ node_modules/leaflet/src/geo/index.js              |     7 [32m+[m
+ .../src/geo/projection/Projection.LonLat.js        |    28 [32m+[m
+ .../src/geo/projection/Projection.Mercator.js      |    49 [32m+[m
+ .../geo/projection/Projection.SphericalMercator.js |    44 [32m+[m
+ node_modules/leaflet/src/geo/projection/index.js   |    26 [32m+[m
+ node_modules/leaflet/src/geometry/Bounds.js        |   219 [32m+[m
+ node_modules/leaflet/src/geometry/LineUtil.js      |   306 [32m+[m
+ node_modules/leaflet/src/geometry/Point.js         |   222 [32m+[m
+ node_modules/leaflet/src/geometry/PolyUtil.js      |   129 [32m+[m
+ .../leaflet/src/geometry/Transformation.js         |    79 [32m+[m
+ node_modules/leaflet/src/geometry/index.js         |     8 [32m+[m
+ node_modules/leaflet/src/images/layers.svg         |     1 [32m+[m
+ node_modules/leaflet/src/images/logo.svg           |     1 [32m+[m
+ node_modules/leaflet/src/images/marker.svg         |     1 [32m+[m
+ node_modules/leaflet/src/layer/DivOverlay.js       |   348 [32m+[m
+ node_modules/leaflet/src/layer/FeatureGroup.js     |    94 [32m+[m
+ node_modules/leaflet/src/layer/GeoJSON.js          |   452 [32m+[m
+ node_modules/leaflet/src/layer/ImageOverlay.js     |   270 [32m+[m
+ .../leaflet/src/layer/Layer.Interactive.leafdoc    |    39 [32m+[m
+ node_modules/leaflet/src/layer/Layer.js            |   275 [32m+[m
+ node_modules/leaflet/src/layer/LayerGroup.js       |   159 [32m+[m
+ node_modules/leaflet/src/layer/Popup.js            |   506 [32m+[m
+ node_modules/leaflet/src/layer/SVGOverlay.js       |    50 [32m+[m
+ node_modules/leaflet/src/layer/Tooltip.js          |   444 [32m+[m
+ node_modules/leaflet/src/layer/VideoOverlay.js     |   106 [32m+[m
+ node_modules/leaflet/src/layer/index.js            |    24 [32m+[m
+ node_modules/leaflet/src/layer/marker/DivIcon.js   |    74 [32m+[m
+ .../leaflet/src/layer/marker/Icon.Default.js       |    66 [32m+[m
+ node_modules/leaflet/src/layer/marker/Icon.js      |   165 [32m+[m
+ .../leaflet/src/layer/marker/Marker.Drag.js        |   161 [32m+[m
+ node_modules/leaflet/src/layer/marker/Marker.js    |   419 [32m+[m
+ node_modules/leaflet/src/layer/marker/index.js     |     8 [32m+[m
+ node_modules/leaflet/src/layer/tile/GridLayer.js   |   923 [32m++[m
+ .../leaflet/src/layer/tile/TileLayer.WMS.js        |   137 [32m+[m
+ node_modules/leaflet/src/layer/tile/TileLayer.js   |   289 [32m+[m
+ node_modules/leaflet/src/layer/tile/index.js       |     6 [32m+[m
+ node_modules/leaflet/src/layer/vector/Canvas.js    |   492 [32m+[m
+ node_modules/leaflet/src/layer/vector/Circle.js    |   113 [32m+[m
+ .../leaflet/src/layer/vector/CircleMarker.js       |   109 [32m+[m
+ node_modules/leaflet/src/layer/vector/Path.js      |   148 [32m+[m
+ node_modules/leaflet/src/layer/vector/Polygon.js   |   159 [32m+[m
+ node_modules/leaflet/src/layer/vector/Polyline.js  |   307 [32m+[m
+ node_modules/leaflet/src/layer/vector/Rectangle.js |    57 [32m+[m
+ .../src/layer/vector/Renderer.getRenderer.js       |    45 [32m+[m
+ node_modules/leaflet/src/layer/vector/Renderer.js  |   133 [32m+[m
+ node_modules/leaflet/src/layer/vector/SVG.Util.js  |    39 [32m+[m
+ node_modules/leaflet/src/layer/vector/SVG.VML.js   |   144 [32m+[m
+ node_modules/leaflet/src/layer/vector/SVG.js       |   207 [32m+[m
+ node_modules/leaflet/src/layer/vector/index.js     |    14 [32m+[m
+ node_modules/leaflet/src/map/Map.js                |  1751 [32m+++[m
+ .../leaflet/src/map/Map.methodOptions.leafdoc      |   112 [32m+[m
+ .../leaflet/src/map/handler/Map.BoxZoom.js         |   152 [32m+[m
+ .../leaflet/src/map/handler/Map.DoubleClickZoom.js |    55 [32m+[m
+ node_modules/leaflet/src/map/handler/Map.Drag.js   |   235 [32m+[m
+ .../leaflet/src/map/handler/Map.Keyboard.js        |   183 [32m+[m
+ .../leaflet/src/map/handler/Map.ScrollWheelZoom.js |    91 [32m+[m
+ .../leaflet/src/map/handler/Map.TapHold.js         |   102 [32m+[m
+ .../leaflet/src/map/handler/Map.TouchZoom.js       |   130 [32m+[m
+ node_modules/leaflet/src/map/index.js              |    17 [32m+[m
+ package-lock.json                                  |    12 [32m+[m
+ package.json                                       |     1 [32m+[m
+ src/html/{news-and-events.html => events.html}     |     6 [32m+[m[31m-[m
+ src/html/group.html                                |   219 [31m-[m
+ src/html/index.html                                |   119 [32m+[m[31m-[m
+ src/html/menu_old.html                             |  2209 [31m---[m
+ src/html/reservation.html                          |    24 [32m+[m[31m-[m
+ src/js/map.js                                      |     3 [32m+[m[31m-[m
+ src/js/navbar-togglable.js                         |     9 [32m+[m
+ src/js/reservation.js                              |    24 [32m+[m
+ src/js/scrolldown.js                               |     1 [32m+[m
+ src/partials/footer.html                           |    15 [32m+[m[31m-[m
+ src/partials/navbar.html                           |     4 [32m+[m[31m-[m
+ src/partials/scroll.html                           |     1 [32m+[m
+ src/scss/_user.scss                                |    25 [32m+[m
+ webpack.config.js                                  |     3 [32m+[m[31m-[m
+ 130 files changed, 47479 insertions(+), 6778 deletions(-)
